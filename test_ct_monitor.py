@@ -14,7 +14,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-from modules.ct_log_monitor import monitor_certificate_transparency
+from modules.ct_log_monitor import monitor_certificate_transparency  # noqa: E402
 
 def main():
     # Test with a known domain
@@ -37,7 +37,7 @@ def main():
         
         # Print some of the found subdomains
         subdomains = results.get('subdomains', [])
-        print(f"\nSample of found subdomains (first 20):")
+        print("\nSample of found subdomains (first 20):")
         for subdomain in subdomains[:20]:
             print(f"  - {subdomain}")
             

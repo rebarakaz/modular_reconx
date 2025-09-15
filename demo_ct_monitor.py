@@ -9,12 +9,6 @@ import os
 # Add the parent directory to the path so we can import modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from modules.ct_log_monitor import (
-    query_crt_sh, 
-    query_certspotter, 
-    query_bufferover,
-    monitor_certificate_transparency
-)
 
 def main():
     print("Certificate Transparency Log Monitoring Demo")

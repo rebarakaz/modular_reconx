@@ -7,7 +7,7 @@ import requests
 import json
 import logging
 import time
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 from urllib.parse import quote_plus
 
 logger = logging.getLogger(__name__)
@@ -93,7 +93,7 @@ def query_certspotter(domain: str) -> List[str]:
     """
     subdomains = set()
     try:
-        url = f"https://api.certspotter.com/v1/issuances"
+        url = "https://api.certspotter.com/v1/issuances"
         params = {
             "domain": domain,
             "include_subdomains": "true",

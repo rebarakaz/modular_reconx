@@ -29,7 +29,7 @@ from modules.vuln_scanner import (
 )
 from modules.wayback_machine import get_wayback_urls
 from modules.whois_lookup import get_whois
-from modules.wp_scanner import check_plugin_vulnerabilities, scan_wordpress_site
+from modules.wp_scanner import scan_wordpress_site
 from modules.ct_log_monitor import monitor_certificate_transparency
 
 # Load environment variables
@@ -302,7 +302,7 @@ def scan(
         
         # Save the results in the main report
         results["wpscan_results"] = wpscan_results
-        print(f"[+] Completed: WPScan comprehensive scan")
+        print("[+] Completed: WPScan comprehensive scan")
         print(f"    - Plugins detected: {wpscan_results.get('scan_summary', {}).get('total_plugins_detected', 0)}")
         print(f"    - Vulnerable plugins: {wpscan_results.get('scan_summary', {}).get('vulnerable_plugins', 0)}")
         print(f"    - Total vulnerabilities: {wpscan_results.get('scan_summary', {}).get('total_vulnerabilities', 0)}")

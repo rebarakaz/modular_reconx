@@ -5,7 +5,7 @@ import requests
 import logging
 import re
 from typing import Dict, List, Any
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 logger = logging.getLogger(__name__)
 
@@ -87,7 +87,7 @@ def _is_version_less_than(version1: str, version2: str) -> bool:
         
         # If all compared parts are equal, the version with fewer parts is smaller
         return len(v1_parts) < len(v2_parts)
-    except:
+    except:  # noqa: E722
         # If comparison fails, assume it's vulnerable
         return True
 
@@ -192,7 +192,7 @@ def detect_installed_plugins(base_url: str) -> List[Dict[str, str]]:
                                 "version": version,
                                 "status": status
                             })
-    except:
+    except:  # noqa: E722
         # REST API may not be available or restricted
         pass
     
@@ -207,7 +207,7 @@ def detect_installed_plugins(base_url: str) -> List[Dict[str, str]]:
                 # Avoid duplicates
                 if not any(p["slug"] == plugin["slug"] for p in detected_plugins):
                     detected_plugins.append(plugin)
-    except:
+    except:  # noqa: E722
         pass
     
     # Method 4: Check via generator meta tag or comment
@@ -220,7 +220,7 @@ def detect_installed_plugins(base_url: str) -> List[Dict[str, str]]:
             if wp_version:
                 # Add as additional information
                 pass
-    except:
+    except:  # noqa: E722
         pass
     
     return detected_plugins

@@ -14,7 +14,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-from modules.ct_log_monitor import (
+from modules.ct_log_monitor import (  # noqa: E402
     query_crt_sh, 
     query_certspotter, 
     query_bufferover,
@@ -63,7 +63,7 @@ def test_combined_monitoring():
         
     # Show sample results
     subdomains = results.get('subdomains', [])
-    print(f"\nSample subdomains (first 10):")
+    print("\nSample subdomains (first 10):")
     for subdomain in subdomains[:10]:
         print(f"  - {subdomain}")
         
@@ -113,7 +113,7 @@ def main():
     crt_sh_results, certspotter_results, bufferover_results = test_individual_queries()
     
     # Test combined monitoring
-    combined_results = test_combined_monitoring()
+    test_combined_monitoring()
     
     print("\n" + "=" * 60)
     print("All tests completed successfully!")

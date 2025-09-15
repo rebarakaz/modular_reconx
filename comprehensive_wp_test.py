@@ -11,8 +11,6 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from modules.wp_scanner import (
-    detect_installed_plugins, 
-    check_plugin_vulnerabilities,
     _extract_plugins_from_html,
     _extract_version_from_css,
     _extract_version_from_js,

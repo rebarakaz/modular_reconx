@@ -10,8 +10,6 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from modules.wp_scanner import (
-    detect_installed_plugins, 
-    check_plugin_vulnerabilities,
     _extract_plugins_from_html,
     _extract_version_from_css,
     _extract_version_from_js,
@@ -83,11 +81,6 @@ def main():
     
     # Demo vulnerability checking
     print("\n3. Vulnerability Checking Demo:")
-    test_plugins = [
-        {"slug": "contact-form-7", "version": "5.1"},
-        {"slug": "woocommerce", "version": "3.5.0"},
-        {"slug": "jetpack", "version": "8.0"}
-    ]
     
     print("Vulnerability checking requires WPSCAN_API_KEY to be set in .env")
     print("When configured, it will check each plugin against WPScan database")
