@@ -85,22 +85,29 @@ Some modules in Modular ReconX require API keys to function. The tool uses a `.e
     * **VULNERS_API_KEY**: Required for vulnerability scanning. A free key can be obtained from Vulners.com.
     * **WPSCAN_API_KEY**: Required for WordPress-specific scanning. A free key (25 requests/day) can be obtained from WPScan.com.
 
-### 4. Data Files
-The GeoIP lookup module requires a local database.
+### 4. Download Data Dependencies
 
-1.  Download the free **GeoLite2 City** database from MaxMind's website.
-2.  Unzip the file and place `GeoLite2-City.mmdb` inside the `data/` directory.
+Some modules require local databases to function. A script is provided to download and set up these dependencies automatically.
 
-### 5. NVD Vulnerability Database (Offline Support)
-Modular ReconX supports offline vulnerability checking using the National Vulnerability Database (NVD).
+1.  **GeoLite2 Database (for GeoIP lookups):**
+    *   Sign up for a free [MaxMind account](https://www.maxmind.com/en/geolite2/signup) to get a license key.
+    *   Add your key to the `.env` file:
+        ```env
+        MAXMIND_LICENSE_KEY="YourMaxMindLicenseKeyHere"
+        ```
 
-1. Download NVD JSON feeds from https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
-2. Place the JSON files in the `nvd_data/` directory
-3. Run the database update script:
-   ```bash
-   python update_db.py
-   ```
-4. The tool will automatically use the local database for vulnerability checks, falling back to Vulners API when needed.
+2.  **Run the Download Script:**
+    ```bash
+    python download_data.py
+    ```
+    This command will download the GeoLite2 database and the latest NVD vulnerability feeds. You can also run `python download_data.py --nvd` or `python download_data.py --geoip` to download them separately.
+
+3.  **Update the NVD Database:**
+    After downloading the NVD JSON feeds, it's recommended to process them into the local database for the tool to use.
+    ```bash
+    python update_db.py
+    ```
+
 
 ## 🚀 How to Run
 
