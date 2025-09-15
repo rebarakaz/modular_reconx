@@ -26,3 +26,6 @@ nvd_data/*
 
 output/*
 !output/.gitkeep
+
+# Tooling
+bfg.jar

@@ -73,8 +73,8 @@ Modular ReconX is a comprehensive OSINT (Open Source Intelligence) tool built in
 ## Usage After Publishing
 Users can clone and install the tool with:
 ```bash
-git clone https://github.com/rebarakaz/ModularReconX.git
-cd ModularReconX
+git clone https://github.com/rebarakaz/modular_reconx.git
+cd modular_reconx
 pip install -e .
 ```
 
