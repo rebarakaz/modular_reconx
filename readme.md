@@ -1,5 +1,9 @@
 # 🕵️ Modular ReconX v1.1
 
+<p align="center">
+  <img src="splash.png" alt="Modular ReconX Splash Screen" width="600">
+</p>
+
 **Modular ReconX** is a modular OSINT tool based on Python for performing a complete analysis of a domain or website using open-source intelligence techniques.
 
 ## ✨ Features
