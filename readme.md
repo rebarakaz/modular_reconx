@@ -39,7 +39,7 @@
 ```bash
 # Clone the repository
 git clone https://github.com/rebarakaz/modular_reconx.git
-cd ModularReconX
+cd modular_reconx
 
 # Install as a package
 pip install -e .
@@ -56,7 +56,7 @@ modular-reconx example.com
 ```bash
 # Clone the repository
 git clone https://github.com/rebarakaz/modular_reconx.git
-cd ModularReconX
+cd modular_reconx
 
 # Create and activate a virtual environment
 python -m venv venv
