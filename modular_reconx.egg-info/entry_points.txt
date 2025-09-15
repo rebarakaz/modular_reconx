@@ -1,3 +1,0 @@
-[console_scripts]
-modular-reconx = scan:main
-reconx = scan:main

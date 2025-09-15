@@ -1,2 +1,22 @@
+# Environment variables
 .env
-splash.png
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+scan.spec
+build.spec
+
+# Local data files - should be downloaded by the user
+data/GeoLite2-City.mmdb
+data/vulnerabilities.db
+nvd_data/
+osint_tool.log
+
+# Cache files
+cache/
