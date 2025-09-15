@@ -1,0 +1,11 @@
+include README.md
+include LICENSE.txt
+include requirements.txt
+include .env.example
+recursive-include data *.txt *.mmdb
+recursive-include nvd_data *.json
+recursive-include modules *.py
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~

@@ -1,0 +1,56 @@
+from setuptools import setup, find_packages
+
+with open("readme.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+with open("requirements.txt", "r", encoding="utf-8") as fh:
+    requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+
+setup(
+    name="modular-reconx",
+    version="1.1.0",
+    author="Reynov Christian",
+    author_email="reynov@chrisnov.com",
+    description="A modular OSINT tool for performing complete analysis of domains or websites using open-source intelligence techniques",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/rebarakaz/ModularReconX",
+    project_urls={
+        "Bug Tracker": "https://github.com/rebarakaz/ModularReconX/issues",
+        "Documentation": "https://github.com/rebarakaz/ModularReconX#readme",
+    },
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Information Technology",
+        "Intended Audience :: Science/Research",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "Topic :: Security",
+        "Topic :: Internet",
+        "Topic :: Utilities",
+        "Topic :: System :: Networking",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
+    packages=find_packages(),
+    include_package_data=True,
+    python_requires=">=3.8",
+    install_requires=requirements,
+    entry_points={
+        "console_scripts": [
+            "reconx=scan:main",
+            "modular-reconx=scan:main",
+        ],
+    },
+    package_data={
+        "": ["data/*", "nvd_data/*", ".env.example"],
+    },
+    data_files=[
+        ("data", ["data/subdomains.txt", "data/common_paths.txt"]),
+    ],
+)
