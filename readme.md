@@ -34,7 +34,7 @@
 #### Option A: Install as a Package (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/rebarakaz/ModularReconX.git
+git clone https://github.com/rebarakaz/modular_reconx.git
 cd ModularReconX
 
 # Install as a package
@@ -51,7 +51,7 @@ modular-reconx example.com
 #### Option B: Traditional Installation
 ```bash
 # Clone the repository
-git clone https://github.com/rebarakaz/ModularReconX.git
+git clone https://github.com/rebarakaz/modular_reconx.git
 cd ModularReconX
 
 # Create and activate a virtual environment
