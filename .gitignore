@@ -15,8 +15,14 @@ build.spec
 # Local data files - should be downloaded by the user
 data/GeoLite2-City.mmdb
 data/vulnerabilities.db
-nvd_data/
 osint_tool.log
 
 # Cache files
 cache/
+
+# Ignore contents of data/result folders, but keep the folders themselves
+nvd_data/*
+!nvd_data/.gitkeep
+
+output/*
+!output/.gitkeep
