@@ -1,0 +1,275 @@
+{
+    "domain": "chrisnov.com",
+    "ip_address": "91.108.119.172",
+    "geoip": {
+        "ip": "91.108.119.172",
+        "country": "Indonesia",
+        "region": "Jakarta",
+        "city": "Jakarta",
+        "latitude": -6.2208,
+        "longitude": 106.8403
+    },
+    "ssl_certificate": {
+        "subject": {
+            "commonName": "chrisnov.com"
+        },
+        "issuer": {
+            "countryName": "US",
+            "organizationName": "Let's Encrypt",
+            "commonName": "R10"
+        },
+        "valid_from": "May 29 10:27:35 2025 GMT",
+        "valid_to": "Aug 27 10:27:34 2025 GMT",
+        "subject_alt_names": [
+            "chrisnov.com",
+            "www.chrisnov.com"
+        ]
+    },
+    "paths_found": {
+        "found": [
+            {
+                "path": "/.git/config",
+                "status_code": 403,
+                "content_type": "text/html"
+            }
+        ]
+    },
+    "open_ports": {
+        "ip": "91.108.119.172",
+        "open_ports": {
+            "443": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 13 Jul 2025 07:28:11 GMT\r\nContent-Type: text/html\r\nContent-Length: 150\r\nConnection: close\r\nServer: hcdn\r\nalt-svc: h3=\":443\"; ma=86400\r\nx-hcdn-request-id: 25889e1a61959874819f2e7280b95ae6-dci-edge3\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body>\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>",
+            "110": "No banner (timeout)",
+            "119": "No banner (timeout)",
+            "123": "No banner (timeout)",
+            "194": "No banner (timeout)",
+            "465": "No banner (timeout)",
+            "143": "No banner (timeout)",
+            "445": "No banner (timeout)",
+            "1080": "No banner (timeout)",
+            "995": "No banner (timeout)",
+            "161": "No banner (timeout)",
+            "587": "No banner (timeout)",
+            "1194": "No banner (timeout)",
+            "993": "No banner (timeout)",
+            "1433": "No banner (timeout)",
+            "3389": "No banner (timeout)",
+            "3306": "No banner (timeout)",
+            "1521": "No banner (timeout)",
+            "1723": "No banner (timeout)",
+            "5432": "No banner (timeout)",
+            "5900": "No banner (timeout)",
+            "6379": "No banner (timeout)",
+            "8888": "No banner (timeout)",
+            "8443": "No banner (timeout)",
+            "9090": "No banner (timeout)",
+            "8000": "No banner (timeout)",
+            "27017": "No banner (timeout)",
+            "8080": "No banner (timeout)"
+        }
+    },
+    "social_links": [
+        {
+            "platform": "Facebook",
+            "url": "https://facebook.com/chrisnov.network"
+        },
+        {
+            "platform": "Instagram",
+            "url": "https://www.instagram.com/raynovchristian/"
+        },
+        {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/@chrisnovitsolutions"
+        }
+    ],
+    "tech_stack": {
+        "server": "hcdn",
+        "x_powered_by": null,
+        "title": "Chrisnov IT Solutions",
+        "generator": "WordPress 6.8.1"
+    },
+    "builtwith": {
+        "javascript-frameworks": [
+            "Prototype"
+        ],
+        "cms": [
+            "WordPress"
+        ],
+        "programming-languages": [
+            "PHP"
+        ],
+        "blogs": [
+            "PHP"
+        ]
+    },
+    "subdomains": {
+        "found": [
+            {
+                "subdomain": "ftp.chrisnov.com",
+                "ips": [
+                    "145.223.108.176"
+                ],
+                "cname": null
+            },
+            {
+                "subdomain": "www.chrisnov.com",
+                "ips": [
+                    "185.124.137.125",
+                    "2a02:4780:1b:d5f0:4af:6db0:eede:1fda",
+                    "2a02:4780:3b:6d9:d7e2:546:eae6:34b0",
+                    "88.223.91.23"
+                ],
+                "cname": "www.chrisnov.com.cdn.hstgr.net."
+            }
+        ]
+    },
+    "dns": {
+        "A": [
+            "91.108.119.172",
+            "153.92.12.2"
+        ],
+        "MX": [
+            "5 mx1.hostinger.com",
+            "10 mx2.hostinger.com"
+        ],
+        "NS": [],
+        "TXT": []
+    },
+    "whois": {
+        "domain_name": "CHRISNOV.COM",
+        "registrar": "HOSTINGER operations, UAB",
+        "emails": [
+            "abuse-tracker@hostinger.com",
+            "contact@privacyprotect.org",
+            "abuse@hostinger.com"
+        ],
+        "creation_date": "2023-11-27 20:23:36",
+        "expiration_date": "2025-11-27 20:23:36",
+        "last_updated": "2024-11-30 13:53:25",
+        "name_servers": [
+            "NS1.DNS-PARKING.COM",
+            "NS2.DNS-PARKING.COM"
+        ],
+        "status": "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+        "note": "Raw data not available with this library version."
+    },
+    "reverse_ip": {
+        "source": "All Fallbacks",
+        "error": "All reverse IP lookup sources failed. Details: Shodan: Shodan API key not set.; HackerTarget: API rate limit exceeded or API key required.; ViewDNS: Network error: 403 Client Error: Forbidden for url: https://viewdns.info/reverseip/?host=91.108.119.172&t=1; ZoomEye: An unexpected error occurred with ZoomEye: resource credits is insufficient",
+        "domains": []
+    },
+    "wayback_urls": {
+        "urls": [
+            "https://web.archive.org/web/20130212133938/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130222054545/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130310042610/http://chrisnov.com:80/?",
+            "https://web.archive.org/web/20130508091447/http://chrisnov.com",
+            "https://web.archive.org/web/20130602095424/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130603050125/http://chrisnov.com:80/?",
+            "https://web.archive.org/web/20130622202038/http://chrisnov.com",
+            "https://web.archive.org/web/20131008112525/http://chrisnov.com/",
+            "https://web.archive.org/web/20141217032527/http://chrisnov.com/",
+            "https://web.archive.org/web/20150801113413/http://chrisnov.com/",
+            "https://web.archive.org/web/20190630202955/http://chrisnov.com/",
+            "https://web.archive.org/web/20240202165020/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20240418205013/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20240418205034/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20240523172657/http://chrisnov.com/",
+            "https://web.archive.org/web/20240523173009/https://chrisnov.com/",
+            "https://web.archive.org/web/20240917042326/https://chrisnov.com/",
+            "https://web.archive.org/web/20240917042327/http://chrisnov.com/",
+            "https://web.archive.org/web/20240917042327/https://chrisnov.com/",
+            "https://web.archive.org/web/20240917042331/https://chrisnov.com/",
+            "https://web.archive.org/web/20250123160315/https://chrisnov.com/",
+            "https://web.archive.org/web/20250218082919/https://chrisnov.com/",
+            "https://web.archive.org/web/20250320035029/https://chrisnov.com/",
+            "https://web.archive.org/web/20250430222251/https://chrisnov.com/",
+            "https://web.archive.org/web/20250515084027/https://chrisnov.com/",
+            "https://web.archive.org/web/20250613152434/https://chrisnov.com/"
+        ],
+        "count": 26
+    },
+    "breach_check": {
+        "email": "abuse-tracker@hostinger.com",
+        "error": "HIBP_API_KEY is not set. An API key is required."
+    },
+    "vulnerabilities": {
+        "note": "Tidak ada kerentanan spesifik yang ditemukan untuk teknologi yang terdeteksi di DB lokal."
+    },
+    "vulnerabilities_by_keyword": {
+        "results": [
+            {
+                "id": "OBB:1124635",
+                "title": "fabjobs.co.nz Cross Site Scripting vulnerability ",
+                "cvss_score": 0.0,
+                "href": "https://www.openbugbounty.org/reports/1124635/"
+            }
+        ]
+    },
+    "wpscan_results": {
+        "contact-form-7": {
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 <= 3.7.1 - CAPTCHA Bypass ",
+                    "fixed_in": "3.7.2",
+                    "references": [
+                        "https://www.securityfocus.com/bid/66381/"
+                    ]
+                },
+                {
+                    "title": "Contact Form 7 <= 3.5.2 - File Upload Remote Code Execution",
+                    "fixed_in": "3.5.3",
+                    "references": [
+                        "https://packetstormsecurity.com/files/124154/"
+                    ]
+                },
+                {
+                    "title": "Contact Form 7 <= 5.0.3 - register_post_type() Privilege Escalation",
+                    "fixed_in": "5.0.4",
+                    "references": [
+                        "https://contactform7.com/2018/09/04/contact-form-7-504/",
+                        "https://plugins.trac.wordpress.org/changeset/1935726/contact-form-7",
+                        "https://plugins.trac.wordpress.org/changeset/1934594/contact-form-7",
+                        "https://plugins.trac.wordpress.org/changeset/1934343/contact-form-7",
+                        "https://plugins.trac.wordpress.org/changeset/1934327/contact-form-7",
+                        "https://www.ripstech.com/php-security-calendar-2018/#day-18"
+                    ]
+                },
+                {
+                    "title": "Contact Form 7 < 5.3.2 - Unrestricted File Upload",
+                    "fixed_in": "5.3.2",
+                    "references": [
+                        "https://www.getastra.com/blog/911/plugin-exploit/contact-form-7-unrestricted-file-upload-vulnerability/",
+                        "https://www.jinsonvarghese.com/unrestricted-file-upload-in-contact-form-7/",
+                        "https://contactform7.com/2020/12/17/contact-form-7-532/#more-38314"
+                    ]
+                },
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                    ]
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                    ]
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": []
+                },
+                {
+                    "title": "Contact Form 7 < 6.0.6 - Order Replay Vulnerability",
+                    "fixed_in": "6.0.6",
+                    "references": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/38257dbf-288e-4028-af65-85f5389888ac"
+                    ]
+                }
+            ]
+        }
+    }
+}

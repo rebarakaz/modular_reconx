@@ -1,0 +1,2571 @@
+{
+    "domain": "chrisnov.com",
+    "ip_address": "179.61.189.59",
+    "geoip": {
+        "ip": "179.61.189.59",
+        "country": "Singapore",
+        "region": null,
+        "city": "Singapore",
+        "latitude": 1.2872,
+        "longitude": 103.8507
+    },
+    "dns": {
+        "A": [
+            "185.124.137.20",
+            "91.108.119.79"
+        ],
+        "MX": [
+            "5 mx1.hostinger.com",
+            "10 mx2.hostinger.com"
+        ],
+        "NS": [
+            "ns1.dns-parking.com",
+            "ns2.dns-parking.com"
+        ],
+        "TXT": [
+            "v=spf1 include:_spf.mail.hostinger.com ~all"
+        ]
+    },
+    "whois": {
+        "domain_name": "CHRISNOV.COM",
+        "registrar": "HOSTINGER operations, UAB",
+        "emails": [
+            "abuse-tracker@hostinger.com"
+        ],
+        "creation_date": "2023-11-27 20:23:36",
+        "expiration_date": "2025-11-27 20:23:36",
+        "last_updated": "2024-11-30 13:53:25",
+        "name_servers": [
+            "NS1.DNS-PARKING.COM",
+            "NS2.DNS-PARKING.COM"
+        ],
+        "status": "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+        "note": "Raw data not available with this library version."
+    },
+    "ssl_certificate": {
+        "subject": {
+            "commonName": "chrisnov.com"
+        },
+        "issuer": {
+            "countryName": "US",
+            "organizationName": "Let's Encrypt",
+            "commonName": "R11"
+        },
+        "valid_from": "Jul 28 09:38:38 2025 GMT",
+        "valid_to": "Oct 26 09:38:37 2025 GMT",
+        "subject_alt_names": [
+            "chrisnov.com",
+            "www.chrisnov.com"
+        ]
+    },
+    "paths_found": {
+        "found": [
+            {
+                "path": "/.git/config",
+                "status_code": 403,
+                "content_type": "text/html"
+            }
+        ]
+    },
+    "open_ports": {
+        "ip": "179.61.189.59",
+        "open_ports": {
+            "80": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Sep 2025 13:29:27 GMT\r\nContent-Type: text/html\r\nContent-Length: 150\r\nConnection: close\r\nServer: hcdn\r\nalt-svc: h3=\":443\"; ma=86400\r\nx-hcdn-request-id: b22de612eae0ac980c9b7e793596c3ad-nme-edge6\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body>\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>",
+            "443": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Sep 2025 13:29:27 GMT\r\nContent-Type: text/html\r\nContent-Length: 150\r\nConnection: close\r\nServer: hcdn\r\nalt-svc: h3=\":443\"; ma=86400\r\nx-hcdn-request-id: 14a0c590ed5d8721a40a9c3a717950da-nme-edge9\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body>\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>"
+        }
+    },
+    "subdomains": {
+        "found": [
+            {
+                "subdomain": "ftp.chrisnov.com",
+                "ips": [
+                    "145.223.108.176",
+                    "64:ff9b::91df:6cb0"
+                ],
+                "cname": null
+            },
+            {
+                "subdomain": "www.chrisnov.com",
+                "ips": [
+                    "185.124.137.22",
+                    "2a02:4780:1c:b4db:8f78:5db6:494:3264",
+                    "2a02:4780:3a:ca9a:e15c:b651:2a1:690e",
+                    "88.223.91.96"
+                ],
+                "cname": "www.chrisnov.com.cdn.hstgr.net."
+            }
+        ]
+    },
+    "tech_stack": {
+        "server": "hcdn",
+        "x_powered_by": "Not specified",
+        "title": "Chrisnov IT Solutions",
+        "generator": "WordPress 6.8.2",
+        "security_headers": {
+            "Content-Security-Policy": "upgrade-insecure-requests",
+            "Strict-Transport-Security": "max-age=63072000; includeSubDomains;preload",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "DENY",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+        }
+    },
+    "builtwith": {
+        "javascript-frameworks": [
+            "Prototype"
+        ],
+        "cms": [
+            "WordPress"
+        ],
+        "programming-languages": [
+            "PHP"
+        ],
+        "blogs": [
+            "PHP"
+        ]
+    },
+    "social_links": [
+        {
+            "platform": "Facebook",
+            "url": "https://facebook.com/chrisnov.network"
+        },
+        {
+            "platform": "Instagram",
+            "url": "https://www.instagram.com/raynovchristian/"
+        },
+        {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/@chrisnovitsolutions"
+        }
+    ],
+    "reverse_ip": {
+        "source": "All Fallbacks",
+        "error": "All reverse IP lookup sources failed. Details: Shodan: Shodan API key not set.; HackerTarget: API rate limit exceeded or API key required.; ViewDNS: Network error: 403 Client Error: Forbidden for url: https://viewdns.info/reverseip/?host=179.61.189.59&t=1; ZoomEye: An unexpected error occurred with ZoomEye: this service not aviliable in your area, please use api.zoomeye.ai instead",
+        "domains": []
+    },
+    "wayback_urls": {
+        "urls": [
+            "https://web.archive.org/web/20130212133938/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130222054545/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130310042610/http://chrisnov.com:80/?",
+            "https://web.archive.org/web/20130508091447/http://chrisnov.com",
+            "https://web.archive.org/web/20130602095424/http://chrisnov.com:80/",
+            "https://web.archive.org/web/20130603050125/http://chrisnov.com:80/?",
+            "https://web.archive.org/web/20130622202038/http://chrisnov.com",
+            "https://web.archive.org/web/20131008112525/http://chrisnov.com/",
+            "https://web.archive.org/web/20141217032527/http://chrisnov.com/",
+            "https://web.archive.org/web/20150801113413/http://chrisnov.com/",
+            "https://web.archive.org/web/20190630202955/http://chrisnov.com/",
+            "https://web.archive.org/web/20240202165020/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20240418205013/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20240418205034/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20240917042331/https://chrisnov.com/",
+            "https://web.archive.org/web/20240917042332/http://chrisnov.com/",
+            "https://web.archive.org/web/20241115042209/http://chrisnov.com/",
+            "https://web.archive.org/web/20241115042209/https://chrisnov.com/",
+            "https://web.archive.org/web/20241130135521/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20241130135522/http://chrisnov.com/",
+            "https://web.archive.org/web/20241130135523/https://chrisnov.com/",
+            "https://web.archive.org/web/20241130135524/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20241214000513/https://chrisnov.com/",
+            "https://web.archive.org/web/20250123160315/https://chrisnov.com/",
+            "https://web.archive.org/web/20250205070739/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20250205070810/https://chrisnov.com/",
+            "https://web.archive.org/web/20250209192545/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20250215232516/http://chrisnov.com/",
+            "https://web.archive.org/web/20250218082919/https://chrisnov.com/",
+            "https://web.archive.org/web/20250220125407/https://chrisnov.com/",
+            "https://web.archive.org/web/20250320035029/https://chrisnov.com/",
+            "https://web.archive.org/web/20250330165636/https://chrisnov.com/",
+            "https://web.archive.org/web/20250330182723/http://www.chrisnov.com/",
+            "https://web.archive.org/web/20250330182723/https://chrisnov.com/",
+            "https://web.archive.org/web/20250330182723/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20250401004808/https://www.chrisnov.com/",
+            "https://web.archive.org/web/20250401034617/http://chrisnov.com/",
+            "https://web.archive.org/web/20250430222251/https://chrisnov.com/",
+            "https://web.archive.org/web/20250515084027/https://chrisnov.com/",
+            "https://web.archive.org/web/20250613152434/https://chrisnov.com/"
+        ],
+        "count": 40
+    },
+    "breach_check": {
+        "email": "abuse-tracker@hostinger.com",
+        "breached": false,
+        "sources": []
+    },
+    "vulnerabilities": {
+        "note": "Tidak ada kerentanan spesifik yang ditemukan untuk teknologi yang terdeteksi."
+    },
+    "vulnerabilities_by_keyword": {
+        "results": [
+            {
+                "id": "OBB:1124635",
+                "title": "fabjobs.co.nz Cross Site Scripting vulnerability ",
+                "cvss_score": 0.0,
+                "href": "https://www.openbugbounty.org/reports/1124635/"
+            }
+        ]
+    },
+    "wpscan_results": {
+        "detected_plugins": [
+            {
+                "slug": "contact-form-7",
+                "version": "unknown"
+            },
+            {
+                "slug": "woocommerce",
+                "version": "unknown"
+            },
+            {
+                "slug": "jetpack",
+                "version": "unknown"
+            },
+            {
+                "slug": "wordpress-seo",
+                "version": "unknown"
+            },
+            {
+                "slug": "wpforms",
+                "version": "unknown"
+            },
+            {
+                "slug": "elementor",
+                "version": "unknown"
+            },
+            {
+                "slug": "updraftplus",
+                "version": "unknown"
+            },
+            {
+                "slug": "wordfence",
+                "version": "unknown"
+            },
+            {
+                "slug": "really-simple-ssl",
+                "version": "unknown"
+            },
+            {
+                "slug": "duplicate-post",
+                "version": "unknown"
+            },
+            {
+                "slug": "google-site-kit",
+                "version": "unknown"
+            },
+            {
+                "slug": "mailchimp-for-wp",
+                "version": "unknown"
+            },
+            {
+                "slug": "classic-editor",
+                "version": "unknown"
+            },
+            {
+                "slug": "all-in-one-wp-migration",
+                "version": "unknown"
+            },
+            {
+                "slug": "wp-super-cache",
+                "version": "unknown"
+            },
+            {
+                "slug": "w3-total-cache",
+                "version": "unknown"
+            },
+            {
+                "slug": "nextgen-gallery",
+                "version": "unknown"
+            },
+            {
+                "slug": "revslider",
+                "version": "unknown"
+            },
+            {
+                "slug": "layer-slider",
+                "version": "unknown"
+            },
+            {
+                "slug": "bbpress",
+                "version": "unknown"
+            },
+            {
+                "slug": "buddypress",
+                "version": "unknown"
+            }
+        ],
+        "vulnerabilities": {
+            "contact-form-7": {
+                "vulnerabilities": [
+                    {
+                        "title": "Contact Form 7 <= 3.7.1 - CAPTCHA Bypass ",
+                        "fixed_in": "3.7.2",
+                        "references": [
+                            "https://www.securityfocus.com/bid/66381/"
+                        ]
+                    },
+                    {
+                        "title": "Contact Form 7 <= 3.5.2 - File Upload Remote Code Execution",
+                        "fixed_in": "3.5.3",
+                        "references": [
+                            "https://packetstormsecurity.com/files/124154/"
+                        ]
+                    },
+                    {
+                        "title": "Contact Form 7 <= 5.0.3 - register_post_type() Privilege Escalation",
+                        "fixed_in": "5.0.4",
+                        "references": [
+                            "https://contactform7.com/2018/09/04/contact-form-7-504/",
+                            "https://plugins.trac.wordpress.org/changeset/1935726/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934594/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934343/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934327/contact-form-7",
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-18"
+                        ]
+                    },
+                    {
+                        "title": "Contact Form 7 < 5.3.2 - Unrestricted File Upload",
+                        "fixed_in": "5.3.2",
+                        "references": [
+                            "https://www.getastra.com/blog/911/plugin-exploit/contact-form-7-unrestricted-file-upload-vulnerability/",
+                            "https://www.jinsonvarghese.com/unrestricted-file-upload-in-contact-form-7/",
+                            "https://contactform7.com/2020/12/17/contact-form-7-532/#more-38314"
+                        ]
+                    },
+                    {
+                        "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                        "fixed_in": "5.8.4",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ]
+                    },
+                    {
+                        "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                        "fixed_in": "5.9.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ]
+                    },
+                    {
+                        "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                        "fixed_in": "5.9.5",
+                        "references": []
+                    },
+                    {
+                        "title": "Contact Form 7 < 6.0.6 - Order Replay Vulnerability",
+                        "fixed_in": "6.0.6",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/38257dbf-288e-4028-af65-85f5389888ac"
+                        ]
+                    }
+                ]
+            },
+            "woocommerce": {
+                "vulnerabilities": [
+                    {
+                        "title": "WooCommerce 2.0.17 - hide-wc-extensions-message Parameter Reflected XSS",
+                        "fixed_in": "2.0.17",
+                        "references": [
+                            "https://packetstormsecurity.com/files/123684/",
+                            "https://www.securityfocus.com/bid/63228/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce 2.0.12 - index.php calc_shipping_state Parameter XSS",
+                        "fixed_in": "2.0.13",
+                        "references": [
+                            "https://packetstormsecurity.com/files/122465/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 2.2.3 - Reflected Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.2.3",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2014/Sep/59",
+                            "https://advisories.dxw.com/advisories/reflected-xss-in-woocommerce-excelling-ecommerce-allows-attackers-ability-to-do-almost-anything-an-admin-user-can-do/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.2.2 - Reflected Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.2.3",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2014/Sep/59"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.2.10 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.2.11",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2015/Feb/75",
+                            "https://packetstormsecurity.com/files/130458/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce 2.3 - 2.3.5 - SQL Injection",
+                        "fixed_in": "2.3.6",
+                        "references": [
+                            "http://www.wordfence.com/blog/2015/03/woocommerce-sql-injection-vulnerability/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce 2.0.20-2.3.10 - Object Injection / XXE",
+                        "fixed_in": "2.3.11",
+                        "references": [
+                            "https://blog.sucuri.net/2015/06/security-advisory-object-injection-vulnerability-in-woocommerce.html"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.4.8 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.4.9",
+                        "references": [
+                            "https://fortiguard.com/zeroday/FG-VD-15-095"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.6.2 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.6.3",
+                        "references": [
+                            "https://woocommerce.wordpress.com/2016/07/19/woocommerce-2-6-3-fixsecurity-release-notes/",
+                            "https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_in_woocommerce_using_image_metadata__exif_.html"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.6.3 - Stored Cross Site Scripting (XSS) via REST API",
+                        "fixed_in": "2.6.4",
+                        "references": [
+                            "https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_in_woocommerce_wordpress_plugin.html",
+                            "https://seclists.org/fulldisclosure/2016/Sep/20",
+                            "https://hackerone.com/reports/152692"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 2.6.8 - Authenticated Tax-Rate CSV XSS",
+                        "fixed_in": "2.6.9",
+                        "references": [
+                            "https://fortiguard.com/zeroday/FG-VD-15-020",
+                            "https://www.fortinet.com/blog/threat-research/woocommerce-tax-rates-cross-site-scripting-vulnerability2.html"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.2.3 - Authenticated PHP Object Injection",
+                        "fixed_in": "3.2.4",
+                        "references": [
+                            "https://woocommerce.wordpress.com/2017/11/16/woocommerce-3-2-4-security-fix-release-notes/",
+                            "https://blog.ripstech.com/2018/woocommerce-php-object-injection/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.4.4 - Potential Object Injection",
+                        "fixed_in": "3.4.5",
+                        "references": [
+                            "https://woocommerce.wordpress.com/2018/08/29/woocommerce-3-4-5-security-fix-release-notes/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.4.5 - Authenticated Object Injection",
+                        "fixed_in": "3.4.6",
+                        "references": [
+                            "https://medium.com/websec/woocommerce-and-azis-with-scotch-bc9d561377e1",
+                            "https://github.com/woocommerce/woocommerce/commit/4738162c25bb244631574d4230533b470f0ee8df#diff-dc3a1c9d68e161cfe6566b05971ec631",
+                            "https://woocommerce.wordpress.com/2018/10/11/woocommerce-3-4-6-security-fix-release-notes/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.4.5 - Authenticated File Deletion to Privilege Escalation",
+                        "fixed_in": "3.4.6",
+                        "references": [
+                            "https://blog.ripstech.com/2018/wordpress-design-flaw-leads-to-woocommerce-rce/",
+                            "https://woocommerce.wordpress.com/2018/10/11/woocommerce-3-4-6-security-fix-release-notes/",
+                            "https://www.ripstech.com/php-security-calendar-2018/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.4.5 - Authenticated Stored XSS",
+                        "fixed_in": "3.4.6",
+                        "references": [
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-1",
+                            "https://woocommerce.wordpress.com/2018/10/11/woocommerce-3-4-6-security-fix-release-notes/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.4.5 - Authenticated Phar Deserialization",
+                        "fixed_in": "3.4.6",
+                        "references": [
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-3",
+                            "https://woocommerce.wordpress.com/2018/10/11/woocommerce-3-4-6-security-fix-release-notes/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.5.0 - Authenticated Stored XSS",
+                        "fixed_in": "3.5.1",
+                        "references": [
+                            "https://www.ripstech.com/php-security-calendar-2018/#Day23"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.5.4 - Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.5.5",
+                        "references": [
+                            "https://woocommerce.wordpress.com/2019/02/20/woocommerce-3-5-5-security-fix-release/",
+                            "https://fortiguard.com/zeroday/FG-VD-19-022",
+                            "https://github.com/woocommerce/woocommerce/commit/ffa230de9091cde33f1d60ffc971533e8682ba8f",
+                            "https://github.com/woocommerce/woocommerce/commit/7def966e4fe626cca274b5a714e07ac36f2655a6"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 3.6.4 - Cross-Site Request Forgery (CSRF) & File Type Check",
+                        "fixed_in": "3.6.5",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset?reponame=&new=2116363%40woocommerce&old=2096035%40woocommerce",
+                            "https://twitter.com/WooCommerce/status/1147543261814374401",
+                            "https://woocommerce.wordpress.com/2019/07/02/woocommerce-3-6-5-security-release/",
+                            "https://blog.ripstech.com/2019/woocommerce-csrf-to-stored-xss/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 4.1.0 - Unescaped Metadata when Duplicating Products",
+                        "fixed_in": "4.1.0",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/browser/woocommerce/tags/4.1.0/readme.txt?rev=2298743"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 4.2.1 - Potential Cross-Site Scripting (XSS) via SelectWoo",
+                        "fixed_in": "4.2.1",
+                        "references": [
+                            "https://woocommerce.wordpress.com/2020/06/22/woocommerce-4-2-1-security-and-fix-release/",
+                            "https://github.com/woocommerce/woocommerce/commit/40f7c2d474e242440b2fb9a886353f5a8772a210",
+                            "https://github.com/woocommerce/woocommerce/commit/14a26aca2cde9c81ade02bdc6dd0a34e184a4202",
+                            "https://github.com/woocommerce/selectWoo/releases/tag/1.0.7"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 4.6.2 - Guest Account Creation",
+                        "fixed_in": "4.6.2",
+                        "references": [
+                            "https://developer.woocommerce.com/2020/11/05/developer-advisory-spam-orders-and-accounts-from-bots/",
+                            "https://github.com/woocommerce/woocommerce/commit/e711a447feaf3d6020204e4319fdd5ba47c3f0b9"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 4.7.0 - Arbitrary Order Status Disclosure via IDOR",
+                        "fixed_in": "4.7.0",
+                        "references": [
+                            "https://github.com/Ko-kn3t/CVE-2020-29156"
+                        ]
+                    },
+                    {
+                        "title": "Woocommerce < 5.2.0 - Authenticated Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "5.2.0",
+                        "references": []
+                    },
+                    {
+                        "title": "Woocommerce 3.3 to 5.5 - Authenticated Blind SQL Injection",
+                        "fixed_in": "5.5.1",
+                        "references": [
+                            "https://woocommerce.com/posts/critical-vulnerability-detected-july-2021/",
+                            "https://twitter.com/WooCommerce/status/1415442447312764931",
+                            "https://www.wordfence.com/blog/2021/07/critical-sql-injection-vulnerability-patched-in-woocommerce/",
+                            "https://noc.org/2021/07/15/serious-sqli-in-woocommerce/",
+                            "https://blog.wpscan.com/critical-woocommerce-vulnerabilities/",
+                            "https://github.com/woocommerce/woocommerce/security/advisories/GHSA-7vx5-x39w-q24g"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 5.7.0  & WooCommerce Admin < 2.6.4 - Analytics Report Leaks",
+                        "fixed_in": "5.7.0",
+                        "references": [
+                            "https://developer.woocommerce.com/2021/09/22/important-security-patch-released-in-woocommerce/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 6.2.1 - Subscriber+ Arbitrary Comment Deletion",
+                        "fixed_in": "6.2.1",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2683324",
+                            "https://developer.woocommerce.com/2022/02/22/woocommerce-6-2-1-security-fix/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 6.2.1 - Path Traversal via Importers",
+                        "fixed_in": "6.2.1",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2683324",
+                            "https://developer.woocommerce.com/2022/02/22/woocommerce-6-2-1-security-fix/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 6.3.1 - Orders Marked as Paid (via PayPal Standard Gateway)",
+                        "fixed_in": "6.3.1",
+                        "references": [
+                            "https://developer.woocommerce.com/2022/03/10/woocommerce-3-5-10-6-3-1-security-releases/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 6.6.0 - Admin+ Stored HTML Injection",
+                        "fixed_in": "6.6.0",
+                        "references": []
+                    },
+                    {
+                        "title": "WooCommerce < 7.9 - Unauthenticated Sensitive Information Disclosure",
+                        "fixed_in": "7.9",
+                        "references": [
+                            "https://hackerone.com/reports/2057736"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 8.1.1 - Shop Manager+ User Metadata Disclosure",
+                        "fixed_in": "8.1.1",
+                        "references": [
+                            "https://hackerone.com/reports/1702658",
+                            "https://developer.woocommerce.com/2023/09/16/woocommerce-vulnerability-reintroduced-from-7-0-1/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 7.9.0 - Sensitive Information Exposure",
+                        "fixed_in": "7.9.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7b2d1879-c337-41c9-9f47-f9c2fe8e5928"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce <= 8.1.1 & WooCommerce Blocks <= 11.1.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Featured Image alt Attribute",
+                        "fixed_in": "8.2.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/525dec5b-b457-483c-ab2d-09dd320edcaa"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 7.0.1 - Authenticated(Shop Manager+) Sensitive Information Exposure",
+                        "fixed_in": "7.0.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f1efcff5-3af6-4c44-9654-b917523419aa"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 8.3.0 - Cross-Site Request Forgery",
+                        "fixed_in": "8.3.0",
+                        "references": [
+                            "https://patchstack.com/database/vulnerability/woocommerce/wordpress-woocommerce-plugin-8-2-2-cross-site-request-forgery-csrf-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 8.4.0 - Reflected Cross-Site Scripting",
+                        "fixed_in": "8.4.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/43810a17-89b4-44f5-887e-1ad0989ea5b4"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 8.6 - Contributor+ Private/Draft Products Access",
+                        "fixed_in": "8.6",
+                        "references": []
+                    },
+                    {
+                        "title": "WooCommerce < 8.6.0 - Cross-Site Request Forgery",
+                        "fixed_in": "8.6.0",
+                        "references": [
+                            "https://patchstack.com/database/vulnerability/woocommerce/wordpress-woocommerce-plugin-8-5-2-cross-site-request-forgery-csrf-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce 8.8.0 - 8.9.2 - Reflected XSS",
+                        "fixed_in": "8.9.3",
+                        "references": [
+                            "https://developer.woocommerce.com/2024/06/10/developer-advisory-xss-vulnerability-8-8-0/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 9.0.0 - Shop Manager+ Content Injection",
+                        "fixed_in": "9.0.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ee8436c2-3dda-481c-92b3-cc2ba8fc1993"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 9.1.4 - Stored XSS",
+                        "fixed_in": "9.1.4",
+                        "references": []
+                    },
+                    {
+                        "title": "WooCommerce < 9.2 - Contributor+ Stored XSS",
+                        "fixed_in": "9.2",
+                        "references": [
+                            "https://developer.woocommerce.com/2024/08/21/woocommerce-9-2-a-better-experience-for-all-users/"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 9.1.0 - Unauthenticated HTML Injection",
+                        "fixed_in": "9.1.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b5dfe2a5-612f-4e6c-a639-4afcff2ffa4c"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 9.4.3 - Reflected XSS",
+                        "fixed_in": "9.4.3",
+                        "references": []
+                    },
+                    {
+                        "title": "WooCommerce < 9.4.3 - Unauthenticated Order Creation",
+                        "fixed_in": "9.4.3",
+                        "references": []
+                    },
+                    {
+                        "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                        "fixed_in": "9.7.1",
+                        "references": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ]
+                    },
+                    {
+                        "title": "Wocommerce < 9.9.4 - Shop manager+ SQLi",
+                        "fixed_in": "9.9.4",
+                        "references": [
+                            "https://hackerone.com/reports/3198980"
+                        ]
+                    },
+                    {
+                        "title": "WooCommerce < 10.0 - Shop Manager PII Leak in Multisite",
+                        "fixed_in": "10.0",
+                        "references": []
+                    }
+                ]
+            },
+            "jetpack": {
+                "vulnerabilities": [
+                    {
+                        "title": "Jetpack <= 2.9.2 - class.jetpack.php XML-RPC Access Control Bypass",
+                        "fixed_in": "2.9.3",
+                        "references": [
+                            "http://jetpack.me/2014/04/10/jetpack-security-update/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack 3.0-3.4.2 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.4.3",
+                        "references": [
+                            "https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html",
+                            "https://jetpack.me/2015/04/20/jetpack-3-4-3-coordinated-security-update/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack <= 3.5.2 - Unauthenticated DOM Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.5.3",
+                        "references": [
+                            "https://blog.sucuri.net/2015/05/jetpack-and-twentyfifteen-vulnerable-to-dom-based-xss-millions-of-wordpress-websites-affected-millions-of-wordpress-websites-affected.html"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack <= 3.7.0 - Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.7.1",
+                        "references": [
+                            "https://jetpack.me/2015/09/30/jetpack-3-7-1-and-3-7-2-security-and-maintenance-releases/",
+                            "https://blog.sucuri.net/2015/10/security-advisory-stored-xss-in-jetpack.html"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack <= 3.7.0 - Information Disclosure",
+                        "fixed_in": "3.7.1",
+                        "references": [
+                            "https://jetpack.me/2015/09/30/jetpack-3-7-1-and-3-7-2-security-and-maintenance-releases/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack <= 3.9.1 - LaTeX HTML Element XSS",
+                        "fixed_in": "3.9.2",
+                        "references": [
+                            "https://jetpack.com/2016/02/25/jetpack-3-9-2-maintenance-and-security-release/",
+                            "https://github.com/Automattic/jetpack/commit/dbc33b9105c4dbb0de81544e682a8b6d5ab7e446"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack 2.0-4.0.2 - Shortcode Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "4.0.3",
+                        "references": [
+                            "https://jetpack.com/2016/05/27/jetpack-4-0-3-critical-security-update/",
+                            "http://wptavern.com/jetpack-4-0-3-patches-a-critical-xss-vulnerability",
+                            "https://blog.sucuri.net/2016/05/security-advisory-stored-xss-jetpack-2.html"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack <= 4.0.3 - Multiple Vulnerabilities",
+                        "fixed_in": "4.0.4",
+                        "references": [
+                            "https://jetpack.com/2016/06/20/jetpack-4-0-4-bug-fixes/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 6.5 - Authenticated Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "6.5",
+                        "references": [
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-11"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack 5.1-7.9 - Vulnerability in Shortcode Embed Code ",
+                        "fixed_in": "7.9.1",
+                        "references": [
+                            "https://jetpack.com/2019/11/19/jetpack-7-9-1-maintenance-security/",
+                            "https://plugins.trac.wordpress.org/changeset/2196895/jetpack",
+                            "https://github.com/Automattic/jetpack/commit/5e38904da8eda0bc86b29fd5298c222e362583df"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 9.8 - Carousel Module Non-Published Page/Post Attachment Comment Leak",
+                        "fixed_in": "9.8",
+                        "references": [
+                            "https://jetpack.com/2021/06/01/jetpack-9-8-engage-your-audience-with-wordpress-stories/",
+                            "https://plugins.trac.wordpress.org/changeset/2541817/jetpack"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 12.1.1 - Author+ Arbitrary File Manipulation via API",
+                        "fixed_in": "12.1.1",
+                        "references": [
+                            "https://jetpack.com/blog/jetpack-12-1-1-critical-security-update/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 12.8-a.3 - Contributor+ Stored XSS via block attribute",
+                        "fixed_in": "12.8-a.3",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/824360ab-c797-465a-8480-baeae941af29"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 12.7 - Improper Authorization via WPCom External Media REST endpoints",
+                        "fixed_in": "12.7",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e62fa16f-a4a1-44a7-9a66-abafd8dddf67"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 12.7 - Authenticated(Contributor+) Clickjacking via Iframe Injection",
+                        "fixed_in": "12.7",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/92a3e622-b3b2-450e-82a7-0a942711e8c0"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 13.2.1 - Contributor+ Stored XSS",
+                        "fixed_in": "13.2.1",
+                        "references": []
+                    },
+                    {
+                        "title": "Jetpack < 13.4 - Contributor+ Stored Cross-Site Scripting via wpvideo Shortcode",
+                        "fixed_in": "13.4",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/11dceac7-7ff8-4384-9046-919c38947c32"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 13.9.1 - Subscriber+ Arbitrary Feedback Access",
+                        "fixed_in": "3.9.10",
+                        "references": [
+                            "https://jetpack.com/blog/jetpack-13-9-1-critical-security-update/"
+                        ]
+                    },
+                    {
+                        "title": "Jetpack < 13.8 - Unauthenticated Arbitrary Block & Shortcode Execution",
+                        "fixed_in": "13.8",
+                        "references": []
+                    },
+                    {
+                        "title": "Jetpack < 13.8, Boost < 3.4.8 - Contributor+ Stored XSS",
+                        "fixed_in": "13.8",
+                        "references": []
+                    },
+                    {
+                        "title": "Jetpack 13.0-14.0 - Unauthenticated DOM-XSS",
+                        "fixed_in": "14.1-a.1",
+                        "references": []
+                    }
+                ]
+            },
+            "wordpress-seo": {
+                "vulnerabilities": [
+                    {
+                        "title": "Yoast SEO - Security issue which allowed any user to reset settings",
+                        "fixed_in": "1.4.5",
+                        "references": [
+                            "https://wordpress.org/plugins/wordpress-seo/changelog/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 1.4.7 - Reset Settings Feature Access Restriction Bypass",
+                        "fixed_in": "1.4.7",
+                        "references": []
+                    },
+                    {
+                        "title": "Yoast SEO < 1.7.4 - Blind SQL Injection",
+                        "fixed_in": "1.7.4",
+                        "references": [
+                            "https://wordpress.org/plugins/wordpress-seo/changelog/",
+                            "https://packetstormsecurity.com/files/130811/",
+                            "https://yoast.com/wordpress-seo-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 2.2 - Authenticated Stored DOM XSS",
+                        "fixed_in": "2.2",
+                        "references": [
+                            "https://packetstormsecurity.com/files/132294/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO <= 3.2.4 - Subscriber Settings Sensitive Data Exposure",
+                        "fixed_in": "3.2.5",
+                        "references": [
+                            "https://www.wordfence.com/blog/2016/05/yoast-seo-vulnerability/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 3.3.0 - Unspecified Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.3.0",
+                        "references": [
+                            "https://wordpress.org/plugins/wordpress-seo/changelog/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 3.4.1 - Authenticated Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.4.1",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/1466243/wordpress-seo",
+                            "https://packetstormsecurity.com/files/138192/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 5.8 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "5.8",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/1766831/wordpress-seo/trunk/admin/google_search_console/class-gsc-table.php",
+                            "https://packetstormsecurity.com/files/145080/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO <= 9.1 - Authenticated Race Condition",
+                        "fixed_in": "9.2",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/1977260/wordpress-seo",
+                            "https://packetstormsecurity.com/files/150497/",
+                            "https://github.com/Yoast/wordpress-seo/pull/11502/commits/3bfa70a143f5ea3ee1934f3a1703bb5caf139ffa"
+                        ]
+                    },
+                    {
+                        "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+                        "fixed_in": "11.6",
+                        "references": [
+                            "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+                            "https://github.com/Yoast/wordpress-seo/pull/13221",
+                            "https://yoast.com/yoast-seo-11.6/"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO 16.7-17.2 - Unauthenticated Full Path Disclosure",
+                        "fixed_in": "17.3",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2608691"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                        "fixed_in": "21.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                        "fixed_in": "22.6",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ]
+                    },
+                    {
+                        "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                        "fixed_in": "22.7",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ]
+                    }
+                ]
+            },
+            "wpforms": {
+                "vulnerabilities": [
+                    {
+                        "title": "WPForms Pro < 1.7.7 - CSV Injection",
+                        "fixed_in": "1.7.7",
+                        "references": []
+                    },
+                    {
+                        "title": "WPForms Pro < 1.8.5.4 - Unauthenticated Stored Cross-Site Scripting via Form Submission",
+                        "fixed_in": "1.8.5.4",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/31c080b8-ba00-4e96-8961-2a1c3a017004"
+                        ]
+                    }
+                ]
+            },
+            "elementor": {
+                "vulnerabilities": [
+                    {
+                        "title": "Elementor Page Builder < 1.8.0 - Authenticated Unrestricted Editing",
+                        "fixed_in": "1.8.0",
+                        "references": [
+                            "https://www.pritect.net/blog/elementor-page-builder-1-8-allows-logged-users-unrestricted-editing"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Page Builder < 2.8.5 - Authenticated Reflected XSS",
+                        "fixed_in": "2.8.5",
+                        "references": [
+                            "https://blog.impenetrable.tech/xss-in-wordpress-elementor-plugin"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Page Builder < 2.7.7 - Authenticated Stored XSS",
+                        "fixed_in": "2.7.7",
+                        "references": [
+                            "https://labs.sucuri.net/stored-xss-in-elementor/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Page Builder < 2.9.6 - Authenticated Safe Mode Privilege Escalation",
+                        "fixed_in": "2.9.6",
+                        "references": [
+                            "https://blog.nintechnet.com/wordpress-elementor-plugin-fixed-safe-mode-privilege-escalation-vulnerability/",
+                            "https://github.com/elementor/elementor/commit/2204e9ecb02a764e4e4fed49f28d8af7534b9392"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 2.9.8 - SVG Sanitizer Bypass leading to Authenticated Stored XSS",
+                        "fixed_in": "2.9.8",
+                        "references": [
+                            "https://blog.nintechnet.com/wordpress-elementor-plugin-fixed-svg-xss-protection-bypass-vulnerability/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 2.7.5 - Authenticated Arbitrary File Upload",
+                        "fixed_in": "2.7.5",
+                        "references": [
+                            "https://pentest.co.uk/labs/advisory/cve-2020-7055/",
+                            "https://pentest.co.uk/labs/vulnerability-disclosure-cve-2020-7055/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Page Builder < 2.9.10 - Authenticated Stored XSS",
+                        "fixed_in": "2.9.10",
+                        "references": [
+                            "https://www.softwaresecured.com/elementor-page-builder-stored-xss/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 2.9.14 - Authenticated Stored Cross-Site Scripting",
+                        "fixed_in": "2.9.14",
+                        "references": [
+                            "http://hidden-one.co.in/2020/07/07/cve-2020-1020-stored-xss-on-elementor-wordpress-plugin/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.0.14 - SVG Upload Allowed by Default",
+                        "fixed_in": "3.0.14",
+                        "references": []
+                    },
+                    {
+                        "title": "Elementor Page Builder < 2.8.4 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.8.4",
+                        "references": [
+                            "https://github.com/elementor/elementor/commit/a31dcf4ee1d18b58feef3e59fabb79976c11d0b8"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Column Element",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Heading Widget",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Divider Widget",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Accordion Widget",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Icon Box Widget",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Image Box Widget",
+                        "fixed_in": "3.1.4",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.4.8 - DOM Cross-Site-Scripting",
+                        "fixed_in": "3.4.8",
+                        "references": [
+                            "https://www.jbelamor.com/xss-elementor-lightox.html"
+                        ]
+                    },
+                    {
+                        "title": "Elementor 3.6.0-3.6.2 - Subscriber+ Arbitrary File Upload",
+                        "fixed_in": "3.6.3",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2708766/elementor/trunk/core/app/modules/onboarding/module.php?old=2688036&old_path=elementor%2Ftrunk%2Fcore%2Fapp%2Fmodules%2Fonboarding%2Fmodule.php",
+                            "https://www.wordfence.com/blog/2022/04/elementor-critical-remote-code-execution-vulnerability/"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.5.6 - DOM Reflected Cross-Site Scripting",
+                        "fixed_in": "3.5.6",
+                        "references": [
+                            "https://rotem-bar.com/hacking-65-million-websites-greater-cve-2022-29455-elementor"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.12.2 - Admin+ SQLi",
+                        "fixed_in": "3.12.2",
+                        "references": []
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.13.2 - Missing Authorization",
+                        "fixed_in": "3.13.2",
+                        "references": []
+                    },
+                    {
+                        "title": "Elementor < 3.5.5 - Iframe Injection",
+                        "fixed_in": "3.5.5",
+                        "references": [
+                            "https://github.com/elementor/elementor/commit/292fc49e0f979bd52d838f0326d1faaebfa59f5e"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.16.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_inline_svg()",
+                        "fixed_in": "3.16.5",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b44ef21f-464e-487a-ba5a-fe889e4c488c"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.16.5 - Missing Authorization to Arbitrary Attachment Read",
+                        "fixed_in": "3.16.5",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c873c76a-144e-4945-8fa2-c9ffe0e3c061"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.18.2 - Contributor+ Arbitrary File Upload to RCE via Template Import",
+                        "fixed_in": "3.18.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b6d0a38-ac28-41c9-9da1-b30b3657b463"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.19.1 - Authenticated(Contributor+) Arbitrary File Deletion and PHAR Deserialization",
+                        "fixed_in": "3.19.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4915b769-9499-40ac-835e-279e3a910558"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder – More than Just a Page Builder < 3.19.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_image_alt",
+                        "fixed_in": "3.19.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4473d3f6-e324-40f5-b92b-167f76b17332"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.20.3 - Contributor+ DOM Stored XSS",
+                        "fixed_in": "3.20.3",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8d7448a-b8a6-4b0b-92df-a15272fc56bf"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.21.6 - Contributor+ DOM Stored XSS",
+                        "fixed_in": "3.21.6",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c7e1028e-e04b-46c4-b574-889d9fc1069d"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.22.2 - Contributor+ Arbitrary SVG Download",
+                        "fixed_in": "3.22.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f11bc707-2465-4b64-945a-c0db6e9043dd"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder – More than Just a Page Builder < 3.24.0 - Authenticated (Contributor+) Stored Cross-Site Scripting in the URL Parameter in Multiple Widgets",
+                        "fixed_in": "3.24.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99a64f7-1ea8-4de6-b24f-1f69bf25c1f5"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.24.6 - Contributor+ Information Exposure via get_image_alt",
+                        "fixed_in": "3.24.6",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96fa9ed7-6c13-4356-8a25-8a309be2b0e9"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                        "fixed_in": "3.25.8",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                        "fixed_in": "3.25.10",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                        "fixed_in": "3.27.5",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                        "fixed_in": "3.25.11",
+                        "references": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "Elementor Website Builder < 3.29.1 - Contributor+ Stored XSS",
+                        "fixed_in": "3.29.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/473bef81-b2c9-429c-aa23-c2dba0908cc3"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.29.1 - Contributor+ Stored XSS",
+                        "fixed_in": "3.29.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/639693b6-369e-457e-a37e-30bdb8ea7275"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.30.3 - Contributor+ Stored XSS via Text Path Widget",
+                        "fixed_in": "3.30.3",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/af29ec92-5b07-4f57-a25f-19f3a894a193"
+                        ]
+                    },
+                    {
+                        "title": "Elementor < 3.30.3 - Admin+ Arbitrary File Read via Image Import",
+                        "fixed_in": "3.30.3",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/13929b51-b32e-401c-a642-49f7cd2d07bf"
+                        ]
+                    }
+                ]
+            },
+            "updraftplus": {
+                "vulnerabilities": [
+                    {
+                        "title": "UpdraftPlus <= 1.9.50 - Privilege Escalation via Nonce Leakage",
+                        "fixed_in": "1.9.51",
+                        "references": [
+                            "https://blog.sucuri.net/2015/02/advisory-dangerous-nonce-leak-in-updraftplus.html",
+                            "http://updraftplus.com/updraftplus-1-9-51-important-security-update/"
+                        ]
+                    },
+                    {
+                        "title": "Updraftplus < 1.9.64 - XSS",
+                        "fixed_in": "1.9.64",
+                        "references": [
+                            "https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html",
+                            "https://updraftplus.com/new-security-vulnerability-found-across-significant-numbers-of-wordpress-plugins-including-updraftplus/"
+                        ]
+                    },
+                    {
+                        "title": "Updraftplus < 1.13.5 - XSS",
+                        "fixed_in": "1.13.5",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.16.66 - Reflected Cross-Site Scripting",
+                        "fixed_in": "1.16.66",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2635585/updraftplus",
+                            "https://plugins.trac.wordpress.org/changeset/2637112/updraftplus"
+                        ]
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.6.59 - Admin+ Stored Cross-Site Scripting",
+                        "fixed_in": "1.6.59",
+                        "references": [
+                            "https://m0ze.ru/vulnerability/[2021-05-09]-[WordPress]-[CWE-79]-UpdraftPlus-WordPress-Plugin-v1.16.56.txt"
+                        ]
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.16.59 - Admin+ Local File Inclusion",
+                        "fixed_in": "1.16.59",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.16.69 - Reflected Cross-Site Scripting",
+                        "fixed_in": "1.16.69",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus Free < 1.22.3 & Premium < 2.22.3 - Subscriber+ Backup Download",
+                        "fixed_in": "1.22.3",
+                        "references": [
+                            "https://updraftplus.com/updraftplus-security-release-1-22-3-2-22-3/",
+                            "https://jetpack.com/2022/02/17/severe-vulnerability-fixed-in-updraftplus-1-22-3/"
+                        ]
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.22.9 - Reflected Cross-Site Scripting",
+                        "fixed_in": "1.22.9",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.23.4 - CSRF",
+                        "fixed_in": "1.23.4",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus: WordPress Backup & Migration < 1.23.11 - Google Drive Storage Update via CSRF",
+                        "fixed_in": "1.23.11",
+                        "references": []
+                    },
+                    {
+                        "title": "UpdraftPlus < 1.24.12 - Unauthenticated PHP Object Injection",
+                        "fixed_in": "1.24.12",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4729ed37-96b2-4717-8a72-89b9a21ec058"
+                        ]
+                    },
+                    {
+                        "title": "UpdraftPlus - Backup/Restore < 1.25.1 - Reflected XSS",
+                        "fixed_in": "1.25.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/af568eea-59ce-467e-ba03-625d04d3db6e"
+                        ]
+                    }
+                ]
+            },
+            "wordfence": {
+                "vulnerabilities": [
+                    {
+                        "title": "Wordfence 3.8.6 - lib/IPTraf.php User-Agent Header Stored XSS",
+                        "fixed_in": "3.8.7",
+                        "references": []
+                    },
+                    {
+                        "title": "Wordfence 3.8.1 - Password Creation Restriction Bypass",
+                        "fixed_in": "3.8.3",
+                        "references": []
+                    },
+                    {
+                        "title": "Wordfence 3.8.1 - wp-admin/admin.php whois Parameter Stored XSS",
+                        "fixed_in": "3.8.3",
+                        "references": [
+                            "https://packetstormsecurity.com/files/122993/",
+                            "https://www.securityfocus.com/bid/62053/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence 3.3.5 - XSS & IAA",
+                        "fixed_in": "3.3.7",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2012/Oct/139"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence 5.2.4 - Unspecified Issue",
+                        "fixed_in": "5.2.5",
+                        "references": []
+                    },
+                    {
+                        "title": "Wordfence 5.2.4 - IPTraf.php URI Request Stored XSS",
+                        "fixed_in": "5.2.5",
+                        "references": [
+                            "https://packetstormsecurity.com/files/128259/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence 5.2.3 - Banned IP Functionality Bypass",
+                        "fixed_in": "5.2.4",
+                        "references": [
+                            "https://packetstormsecurity.com/files/128259/",
+                            "https://seclists.org/fulldisclosure/2014/Sep/49",
+                            "https://vexatioustendencies.com/wordfence-v5-2-3-2-stored-xss-insufficient-logging-throttle-bypass-exploit-detection-bypass/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence 5.2.3 - Multiple Vulnerabilities",
+                        "fixed_in": "5.2.4",
+                        "references": [
+                            "https://vexatioustendencies.com/wordfence-v5-2-3-2-stored-xss-insufficient-logging-throttle-bypass-exploit-detection-bypass/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence <= 5.2.4 - Multiple Vulnerabilities (XSS & Bypasses)",
+                        "fixed_in": "5.2.5",
+                        "references": [
+                            "https://secupress.me/blog/wordfence-5-2-5-security-update/",
+                            "https://www.securityfocus.com/bid/70915/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence 5.2.2 - XSS in Referer Header",
+                        "fixed_in": "5.2.3",
+                        "references": [
+                            "https://vexatioustendencies.com/wordpress-plugin-vulnerability-dump-part-2/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence <= 5.1.4 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "5.1.5",
+                        "references": []
+                    },
+                    {
+                        "title": "Wordfence < 7.1.14 - Username Enumeration Prevention Bypass",
+                        "fixed_in": "7.1.14",
+                        "references": [
+                            "http://www.waraxe.us/advisory-109.html",
+                            "https://packetstormsecurity.com/files/149845/"
+                        ]
+                    },
+                    {
+                        "title": "Wordfence < 7.6.1 - Admin+ Stored Cross-Site Scripting",
+                        "fixed_in": "7.6.1",
+                        "references": []
+                    }
+                ]
+            },
+            "really-simple-ssl": {
+                "vulnerabilities": [
+                    {
+                        "title": "Really Simple SSL < 8.0.0 - Admin+ Server-Side Request Forgery",
+                        "fixed_in": "8.0.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/39722a07-abfe-4956-b5d0-8ece06913a85"
+                        ]
+                    },
+                    {
+                        "title": "Really Simple Security (Free, Pro, and Pro Multisite) 9.0.0 - 9.1.1.1 - Authentication Bypass",
+                        "fixed_in": "9.1.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7d5d05ad-1a7a-43d2-bbbf-597e975446be"
+                        ]
+                    },
+                    {
+                        "title": "Really Simple SSL < 9.2.0 - Cross-Site Request Forgery",
+                        "fixed_in": "9.2.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9a322b84-93cf-4793-956f-c2e53574041c"
+                        ]
+                    }
+                ]
+            },
+            "duplicate-post": {
+                "vulnerabilities": [
+                    {
+                        "title": "Duplicate Post 2.5 - duplicate-post-admin.php User Login Cookie Value SQL Injection",
+                        "fixed_in": "2.6",
+                        "references": []
+                    },
+                    {
+                        "title": "Duplicate Post 2.5 - options-general.php post Parameter Reflected XSS",
+                        "fixed_in": "2.6",
+                        "references": []
+                    },
+                    {
+                        "title": "Duplicate Post <= 3.2.3 - Authenticated Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "3.2.4",
+                        "references": [
+                            "https://packetstormsecurity.com/files/154622/",
+                            "https://wordpress.org/support/topic/cross-site-scripting-xss-vulnerability-2/",
+                            "https://plugins.trac.wordpress.org/changeset/2208827/duplicate-post"
+                        ]
+                    }
+                ]
+            },
+            "google-site-kit": {
+                "vulnerabilities": [
+                    {
+                        "title": "Site Kit by Google < 1.8.0 - Privilege Escalation to gain Search Console Access",
+                        "fixed_in": "1.8.0",
+                        "references": [
+                            "https://www.wordfence.com/blog/2020/05/vulnerability-in-google-wordpress-plugin-grants-attacker-search-console-access/"
+                        ]
+                    }
+                ]
+            },
+            "mailchimp-for-wp": {
+                "vulnerabilities": [
+                    {
+                        "title": "MailChimp for WordPress <= 4.0.10 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "4.0.11",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/1550477/mailchimp-for-wp",
+                            "https://advisories.dxw.com/advisories/reflected-xss-in-mailchimp-for-wordpress-could-allow-an-attacker-to-do-almost-anything-an-admin-user-can/"
+                        ]
+                    },
+                    {
+                        "title": "MailChimp for WordPress <= 4.1.6 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "4.1.7",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/1726656/mailchimp-for-wp",
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-12"
+                        ]
+                    },
+                    {
+                        "title": "Mailchimp For WP < 4.1.8 - XSS",
+                        "fixed_in": "4.1.8",
+                        "references": []
+                    },
+                    {
+                        "title": "MC4WP: Mailchimp for WordPress < 4.8.5 - Authenticated Arbitrary Redirect",
+                        "fixed_in": "4.8.5",
+                        "references": []
+                    },
+                    {
+                        "title": "MC4WP: Mailchimp for WordPress < 4.8.5 - Unauthorised Actions via CSRF",
+                        "fixed_in": "4.8.5",
+                        "references": []
+                    },
+                    {
+                        "title": "MC4WP < 4.8.7 - Admin+ Stored Cross-Site Scripting",
+                        "fixed_in": "4.8.7",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2687297"
+                        ]
+                    },
+                    {
+                        "title": "MC4WP < 4.8.7 - Admin+ Stored Cross-Site Scripting",
+                        "fixed_in": "4.8.7",
+                        "references": [
+                            "https://www.hackpertise.com/cve/30-cve-2021-36833/"
+                        ]
+                    },
+                    {
+                        "title": "MC4WP < 4.9.10 - Unauthenticated Unpublished Form Preview",
+                        "fixed_in": "4.9.10",
+                        "references": [
+                            "https://patchstack.com/database/vulnerability/mailchimp-for-wp/wordpress-mc4wp-plugin-4-9-9-broken-access-control-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "MC4WP: Mailchimp for WordPress 4.9.9 - 4.9.16 - Reflected Cross-Site Scripting",
+                        "fixed_in": "4.9.17",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1d2ba8ea-a75f-4069-b67d-f832acb1deef"
+                        ]
+                    },
+                    {
+                        "title": "MailChimp for Wordpress < 4.9.17 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                        "fixed_in": "4.9.17",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/aa464547-0380-4b91-a5ea-0cd9a66da7a7"
+                        ]
+                    }
+                ]
+            },
+            "classic-editor": {
+                "note": "No vulnerabilities found"
+            },
+            "all-in-one-wp-migration": {
+                "vulnerabilities": [
+                    {
+                        "title": "All-in-One WP Migration < 2.0.5 - Unauthenticated Database Export",
+                        "fixed_in": "2.0.5",
+                        "references": [
+                            "https://www.pritect.net/blog/all-in-one-wp-migration-2-0-4-security-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 6.46 - Reflected Cross-Site Scripting (XSS)",
+                        "fixed_in": "6.46",
+                        "references": [
+                            "https://wordpress.org/plugins/all-in-one-wp-migration/#developers"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 7.0 - Authenticated Cross-Site Scripting (XSS)",
+                        "fixed_in": "7.0",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2124441",
+                            "https://wptavern.com/all-in-one-wp-migration-7-0-patches-xss-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 7.15 - Arbitrary Backup Download",
+                        "fixed_in": "7.15",
+                        "references": [
+                            "https://vavkamil.cz/2020/03/25/all-in-one-wp-migration/"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 7.41 - Admin+ Arbitrary File Upload to RCE",
+                        "fixed_in": "7.41",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2516181#file8"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 7.59 - Admin+ File Deletion on Windows Hosts via Path Traversal",
+                        "fixed_in": "7.59",
+                        "references": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-1476"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration < 7.63 - Unauthenticated Reflected XSS",
+                        "fixed_in": "7.63",
+                        "references": []
+                    },
+                    {
+                        "title": "All-in-One WP Migration and Backup < 7.87 - Unauthenticated Information Disclosure via Error Logs",
+                        "fixed_in": "7.87",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c4901d9d-7b37-40d5-a42b-59c80bbbe8ff"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration and Backup < 7.87 - Authenticated (Administrator+) Arbitrary PHP Code Injection",
+                        "fixed_in": "7.87",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d97c3379-56c9-4261-9a70-3119ec121a40"
+                        ]
+                    },
+                    {
+                        "title": "All in One WP Migration < 7.90 - Unauthenticated PHP Object Injection",
+                        "fixed_in": "7.90",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0823d1d9-4f3b-4ac0-8cd1-ad208ebc325f"
+                        ]
+                    },
+                    {
+                        "title": "All-in-One WP Migration and Backup < 7.98 - Admin+ Stored XSS",
+                        "fixed_in": "7.98",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/85930893-d415-4131-bcda-54a20644eddc"
+                        ]
+                    }
+                ]
+            },
+            "wp-super-cache": {
+                "vulnerabilities": [
+                    {
+                        "title": "WP-Super-Cache 1.3 - Remote Code Execution",
+                        "fixed_in": "1.3.2",
+                        "references": [
+                            "http://www.acunetix.com/blog/web-security-zone/wp-plugins-remote-code-execution/",
+                            "https://wordpress.org/support/topic/pwn3d",
+                            "https://blog.sucuri.net/2013/04/update-wp-super-cache-and-w3tc-immediately-remote-code-execution-vulnerability-disclosed.html"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/wp-cache.php wp_nonce_url Function URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/plugins/wptouch.php URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/plugins/searchengine.php URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/plugins/domain-mapping.php URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/plugins/badbehaviour.php URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache 1.3 - trunk/plugins/awaitingmoderation.php URI XSS",
+                        "fixed_in": "1.3.1",
+                        "references": []
+                    },
+                    {
+                        "title": "WP Super Cache < 1.4.3 - Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.4.3",
+                        "references": [
+                            "https://blog.sucuri.net/2015/04/security-advisory-persistent-xss-in-wp-super-cache.html"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.4.9 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.4.9",
+                        "references": [
+                            "https://odd.blog/2017/02/03/wp-super-cache-1-4-9/"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.4.5 - PHP Object Injection",
+                        "fixed_in": "1.4.5",
+                        "references": [
+                            "http://z9.io/2015/09/25/wp-super-cache-1-4-5/"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.7.2 - Authenticated Remote Code Execution (RCE)",
+                        "fixed_in": "1.7.2",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2496238/wp-super-cache",
+                            "https://m0ze.ru/vulnerability/[2021-03-13]-[WordPress]-[CWE-94]-WP-Super-Cache-WordPress-Plugin-v1.7.1.txt"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.7.3 - Authenticated Remote Code Execution",
+                        "fixed_in": "1.7.3",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2522794/wp-super-cache"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.7.3 - Authenticated Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.7.3",
+                        "references": [
+                            "https://m0ze.ru/vulnerability/[2021-03-23]-[WordPress]-[CWE-79]-WP-Super-Cache-WordPress-Plugin-v1.7.2.txt"
+                        ]
+                    },
+                    {
+                        "title": "WP Super Cache < 1.9 - Unauthenticated Cache Poisoning",
+                        "fixed_in": "1.9",
+                        "references": []
+                    }
+                ]
+            },
+            "w3-total-cache": {
+                "vulnerabilities": [
+                    {
+                        "title": "W3 Total Cache 0.9.2.4 - Username & Hash Extract",
+                        "fixed_in": "0.9.2.5",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2012/Dec/242",
+                            "https://github.com/FireFart/W3TotalCacheExploit"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache - Remote Code Execution",
+                        "fixed_in": "0.9.2.9",
+                        "references": [
+                            "http://www.acunetix.com/blog/web-security-zone/wp-plugins-remote-code-execution/",
+                            "https://wordpress.org/support/topic/pwn3d",
+                            "https://blog.sucuri.net/2013/04/update-wp-super-cache-and-w3tc-immediately-remote-code-execution-vulnerability-disclosed.html"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache 0.9.4 - Edge Mode Enabling CSRF",
+                        "fixed_in": "0.9.4.1",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2014/Sep/29"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache <= 0.9.4 - Cross-Site Request Forgery (CSRF)",
+                        "fixed_in": "0.9.4.1",
+                        "references": [
+                            "https://mazinahmed.net/blog/w3-total-fail/"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache <= 0.9.4 - Debug Mode XSS",
+                        "fixed_in": "0.9.4.1",
+                        "references": []
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 - Authenticated Reflected Cross-Site Scripting (XSS)",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://blog.zerial.org/seguridad/vulnerabilidad-cross-site-scripting-en-wordpress-w3-total-cache/",
+                            "https://seclists.org/fulldisclosure/2016/Sep/52",
+                            "https://sumofpwn.nl/advisory/2016/reflected_cross_site_scripting_vulnerability_in_w3_total_cache_plugin.html",
+                            "https://seclists.org/fulldisclosure/2016/Nov/63"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 – Unauthenticated Security Token Bypass",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://secupress.me/blog/4-new-security-flaws-w3-total-cache-0-9-4-1/"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 – Authenticated Arbitrary File Upload",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://secupress.me/blog/4-new-security-flaws-w3-total-cache-0-9-4-1/"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 – Authenticated Arbitrary File Download",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://secupress.me/blog/4-new-security-flaws-w3-total-cache-0-9-4-1/"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 – Authenticated Arbitrary PHP Code Execution",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://secupress.me/blog/4-new-security-flaws-w3-total-cache-0-9-4-1/"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache <= 0.9.4 - Unauthenticated Server Side Request Forgery (SSRF)",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://klikki.fi/adv/w3_total_cache.html"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 - Weak Validation of Amazon SNS Push Messages",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://sumofpwn.nl/advisory/2016/weak_validation_of_amazon_sns_push_messages_in_w3_total_cache_wordpress_plugin.html",
+                            "https://seclists.org/fulldisclosure/2016/Nov/61"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.5 - Information Disclosure Race Condition",
+                        "fixed_in": "0.9.5",
+                        "references": [
+                            "https://sumofpwn.nl/advisory/2016/information_disclosure_race_condition_in_w3_total_cache_wordpress_plugin.html",
+                            "https://seclists.org/fulldisclosure/2016/Nov/62"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache 0.9.2.6-0.9.3 - Unauthenticated Arbitrary File Read",
+                        "fixed_in": "0.9.4",
+                        "references": [
+                            "https://vinhjaxt.github.io/2019/03/cve-2019-6715"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache <= 0.9.7.3 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "0.9.7.4",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2081515/w3-total-cache#file24"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.7.4 - Blind SSRF and RCE via phar",
+                        "fixed_in": "0.9.7.4",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2081515/w3-total-cache#file24"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 0.9.7.4 - Cryptographic Signature Bypass",
+                        "fixed_in": "0.9.7.4",
+                        "references": [
+                            "https://plugins.trac.wordpress.org/changeset/2081515/w3-total-cache#file21"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.1.3 - Authenticated Stored XSS",
+                        "fixed_in": "2.1.3",
+                        "references": [
+                            "https://m0ze.ru/vulnerability/[2021-04-25]-[WordPress]-[CWE-79]-W3-Total-Cache-WordPress-Plugin-v2.1.2.txt"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.1.5 - Reflected XSS in Extensions Page (JS Context)",
+                        "fixed_in": "2.1.5",
+                        "references": []
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.1.4 - Reflected XSS in Extensions Page (Attribute Context)",
+                        "fixed_in": "2.1.4",
+                        "references": []
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.7.6 - Sensitive Credentials Stored in Plaintext",
+                        "fixed_in": "2.7.6",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2d89a534-978e-4fd8-be3a-5137bdc22dc9"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.8.2 - Subscriber+ Server-Side Request Forgery",
+                        "fixed_in": "2.8.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/196e629f-7c77-4bcb-8224-305a0108b630"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.8.2 - Information Exposure via Log Files",
+                        "fixed_in": "2.8.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8292f23c-fb17-4082-9788-f643d1bb097e"
+                        ]
+                    },
+                    {
+                        "title": "W3 Total Cache < 2.8.2 - Unauthenticated Plugin Deactivation and Extensions Activation/Deactivation",
+                        "fixed_in": "2.8.2",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/329ad5dc-9339-4540-aba3-f21a78a74d4b"
+                        ]
+                    }
+                ]
+            },
+            "nextgen-gallery": {
+                "vulnerabilities": [
+                    {
+                        "title": "NextGEN Gallery < 2.0.66 - Arbitrary File Upload",
+                        "fixed_in": "2.0.66",
+                        "references": [
+                            "https://packetstormsecurity.com/files/127340/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery 2.0.0 - Directory Traversal",
+                        "fixed_in": "2.0.7",
+                        "references": [
+                            "https://seclists.org/fulldisclosure/2014/Feb/171",
+                            "https://advisories.dxw.com/advisories/directory-traversal-in-nextgen-gallery-2-0-0/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery - swfupload.swf Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.9.8",
+                        "references": [
+                            "https://brindi.si/g/blog/vulnerable-swf-bundled-in-wordpress-plugins.html",
+                            "https://www.securityfocus.com/bid/60433/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery 1.9.12 - Arbitrary File Upload",
+                        "fixed_in": "1.9.13",
+                        "references": [
+                            "https://wordpress.org/plugins/nextgen-gallery/changelog/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery 1.9.11 - Full Path Disclosure",
+                        "fixed_in": "2.0.0",
+                        "references": [
+                            "https://www.openwall.com/lists/oss-security/2013/02/15/3"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery 1.9.5 - gallerypath Parameter Stored XSS",
+                        "fixed_in": "2.0.0",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 1.9.0 - Multiple Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.9.1",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 1.8.3 - XXS & CSRF",
+                        "fixed_in": "1.8.4",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 1.7.3 - xml/ajax.php Path Disclosure",
+                        "fixed_in": "1.7.4",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 1.5.1 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.5.2",
+                        "references": [
+                            "https://www.securityfocus.com/bid/39250/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.0.77.3 - CSRF & Arbitrary File Upload",
+                        "fixed_in": "2.0.77.3",
+                        "references": [
+                            "https://blog.nettitude.com/uk/crsf-and-unsafe-arbitrary-file-upload-in-nextgen-gallery-plugin-for-wordpress"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.1.9 - Authenticated Path Traversal",
+                        "fixed_in": "2.1.9",
+                        "references": [
+                            "https://web.archive.org/web/20181021204353/https://permalink.gmane.org/gmane.comp.security.oss.general/17650",
+                            "https://github.com/espreto/wpsploit/blob/master/documentation/auxiliary/wp_nextgen_gallery_dir_read.md"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 2.1.56 - Authenticated Local File Inclusion (LFI) & SQLi",
+                        "fixed_in": "2.1.57",
+                        "references": [
+                            "http://www.kb.cert.org/vuls/id/346175",
+                            "https://plugins.trac.wordpress.org/changeset/1533907/nextgen-gallery"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.1.79 - Unauthenticated SQL Injection",
+                        "fixed_in": "2.1.79",
+                        "references": [
+                            "https://blog.sucuri.net/2017/02/sql-injection-vulnerability-nextgen-gallery-wordpress.html",
+                            "https://plugins.trac.wordpress.org/changeset/1602275/nextgen-gallery"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.2.50 - Galley Paths Not Secured",
+                        "fixed_in": "2.2.50",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery <= 2.2.44 - Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.2.45",
+                        "references": [
+                            "https://fortiguard.com/zeroday/FG-VD-17-215",
+                            "https://plugins.trac.wordpress.org/changeset/1822089/nextgen-gallery"
+                        ]
+                    },
+                    {
+                        "title": "NextGen Gallery <= 3.1.5 - Authenticated PHP Object Injection",
+                        "fixed_in": "3.1.6",
+                        "references": [
+                            "https://medium.com/websec/wordpress-nextgen-gallery-3-1-5-rce-via-low-priviledged-users-85a37ff87423",
+                            "https://plugins.trac.wordpress.org/changeset/2013508/nextgen-gallery",
+                            "https://plugins.trac.wordpress.org/changeset/2008464/nextgen-gallery"
+                        ]
+                    },
+                    {
+                        "title": "Freemius Library < 2.2.4 - Subscriber+ Arbitrary Option Update ",
+                        "fixed_in": "3.1.7",
+                        "references": [
+                            "https://wptavern.com/freemius-patches-severe-vulnerability-in-library-used-by-popular-wordpress-plugins",
+                            "https://freemius.com/blog/sdk-security-vulnerability/",
+                            "https://github.com/Freemius/wordpress-sdk/commit/50a7ca3d921d59e1d2b39bb6ab3c6c7efde494b8",
+                            "https://plugins.trac.wordpress.org/changeset/2039381/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.1.15 - Unrestricted File Upload",
+                        "fixed_in": "2.1.15",
+                        "references": [
+                            "https://www.openwall.com/lists/oss-security/2015/10/27/6",
+                            "https://github.com/cybersecurityworks/Disclosed/issues/6",
+                            "https://packetstormsecurity.com/files/135061/"
+                        ]
+                    },
+                    {
+                        "title": "Nextgen Gallery < 3.2.11 - SQL Injection",
+                        "fixed_in": "3.2.11",
+                        "references": [
+                            "https://fortiguard.com/zeroday/FG-VD-19-099",
+                            "https://www.fortinet.com/blog/threat-research/wordpress-plugin-sql-injection-vulnerability.html"
+                        ]
+                    },
+                    {
+                        "title": "NextGen Gallery < 2.1.15 - Path Traversal",
+                        "fixed_in": "2.1.15",
+                        "references": [
+                            "https://github.com/cybersecurityworks/Disclosed/issues/2",
+                            "https://packetstormsecurity.com/files/135114/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 2.1.10 - Multiple XSS",
+                        "fixed_in": "2.1.10",
+                        "references": [
+                            "https://www.openwall.com/lists/oss-security/2015/10/27/4"
+                        ]
+                    },
+                    {
+                        "title": "NextGen Gallery < 3.5.0 - CSRF allows File Upload, Stored XSS, and RCE",
+                        "fixed_in": "3.5.0",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/02/severe-vulnerabilities-patched-in-nextgen-gallery-affect-over-800000-wordpress-sites/"
+                        ]
+                    },
+                    {
+                        "title": "NextGen Gallery < 3.5.0 - CSRF allows File Upload",
+                        "fixed_in": "3.5.0",
+                        "references": [
+                            "https://www.wordfence.com/blog/2021/02/severe-vulnerabilities-patched-in-nextgen-gallery-affect-over-800000-wordpress-sites/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.29 - Thumbnail Deletion via CSRF",
+                        "fixed_in": "3.29",
+                        "references": []
+                    },
+                    {
+                        "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                        "fixed_in": "3.3.10",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.39 - Admin+ PHAR Deserialization",
+                        "fixed_in": "3.39",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.39 - Admin+ Arbitrary File Read and Delete",
+                        "fixed_in": "3.39",
+                        "references": []
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.39 - Admin+ Local File Inclusion",
+                        "fixed_in": "3.39",
+                        "references": []
+                    },
+                    {
+                        "title": "WordPress Gallery Plugin – NextGEN Gallery < 3.59.1 - Missing Authorization to Unauthenticated Information Disclosure",
+                        "fixed_in": "3.59.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/75f87f99-9f0d-46c2-a6f1-3c1ea0176303"
+                        ]
+                    },
+                    {
+                        "title": "Nextgen Gallery < 3.59.1 - Admin+ Stored XSS",
+                        "fixed_in": "3.59.1",
+                        "references": [
+                            "https://research.cleantalk.org/cve-2024-2744/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.59.3 - Admin+ Stored XSS",
+                        "fixed_in": "3.59.3",
+                        "references": [
+                            "https://research.cleantalk.org/CVE-2024-5442/"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.59.4 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                        "fixed_in": "3.59.4",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/02930a65-91b6-475e-9673-063ba5929b6c"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.59.5 - Admin+ Stored XSS",
+                        "fixed_in": "3.59.5",
+                        "references": [
+                            "https://research.cleantalk.org/cve-2024-6393/"
+                        ]
+                    },
+                    {
+                        "title": "Multiple Plugins - Contributor+ DOM-Based Stored XSS via FancyBox JavaScript Library",
+                        "fixed_in": "3.59.5",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d99d4b9a-aa09-434d-91a8-7afaa0e8b5db"
+                        ]
+                    },
+                    {
+                        "title": "NextGEN Gallery < 3.59.9 - Admin+ Stored XSS",
+                        "fixed_in": "3.59.9",
+                        "references": []
+                    },
+                    {
+                        "title": "Multiple Plugins <= (Various Versions) - Authenticated (Contributor+) Stored DOM-Based Cross-Site Scripting via SimpleLightbox JavaScript Library",
+                        "fixed_in": "3.59.5",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bcbc8ce6-5eb7-4599-b844-72eb2ff3093c"
+                        ]
+                    },
+                    {
+                        "title": "Multiple Plugins <= (Various Versions) - Authenticated (Contributor+) Stored DOM-Based Cross-Site Scripting via ThickBox JavaScript Library",
+                        "fixed_in": "3.59.12",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59ea7390-3587-4fce-b267-bf525dbe3e27"
+                        ]
+                    }
+                ]
+            },
+            "revslider": {
+                "vulnerabilities": [
+                    {
+                        "title": "WordPress Slider Revolution - Local File Disclosure",
+                        "fixed_in": "4.1.5",
+                        "references": [
+                            "https://blog.sucuri.net/2014/09/slider-revolution-plugin-critical-vulnerability-being-exploited.html",
+                            "https://packetstormsecurity.com/files/129761/"
+                        ]
+                    },
+                    {
+                        "title": "WordPress Slider Revolution Shell Upload",
+                        "fixed_in": "3.0.96",
+                        "references": [
+                            "https://whatisgon.wordpress.com/2014/11/30/another-revslider-vulnerability/"
+                        ]
+                    },
+                    {
+                        "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                        "fixed_in": "6.6.13",
+                        "references": []
+                    },
+                    {
+                        "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                        "fixed_in": "6.6.15",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                        "fixed_in": "6.6.16",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                        "fixed_in": "6.6.19",
+                        "references": []
+                    },
+                    {
+                        "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                        "fixed_in": "6.7.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                        "fixed_in": "6.7.8",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                        "fixed_in": "6.7.11",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                        "fixed_in": "6.7.11",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                        "fixed_in": "6.7.0",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                        "fixed_in": "6.7.11",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                        "fixed_in": "6.7.14",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                        "fixed_in": "6.7.19",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ]
+                    },
+                    {
+                        "title": "Slider Revolution < 6.7.37 - Authenticated (Contributor+) Arbitrary File Read via 'used_svg' and 'used_images'",
+                        "fixed_in": "6.7.37",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ea49df40-e58f-4e20-8e48-ed0f9a1b94ca"
+                        ]
+                    }
+                ]
+            },
+            "layer-slider": {
+                "note": "No vulnerabilities found"
+            },
+            "bbpress": {
+                "vulnerabilities": [
+                    {
+                        "title": "bbPress - Multiple Script Malformed Input Path Disclosure",
+                        "fixed_in": "2.0",
+                        "references": [
+                            "https://exchange.xforce.ibmcloud.com/vulnerabilities/78244",
+                            "https://packetstormsecurity.com/files/116123/"
+                        ]
+                    },
+                    {
+                        "title": "bbPress - forum.php page Parameter SQL Injection",
+                        "fixed_in": "2.0",
+                        "references": [
+                            "https://exchange.xforce.ibmcloud.com/vulnerabilities/78244",
+                            "https://packetstormsecurity.com/files/116123/"
+                        ]
+                    },
+                    {
+                        "title": "bbPress <= 2.5.8 - Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.5.9",
+                        "references": [
+                            "https://blog.sucuri.net/2016/05/security-advisory-stored-xss-bbpress-2.html",
+                            "https://bbpress.org/blog/2016/05/bbpress-2-5-9/"
+                        ]
+                    },
+                    {
+                        "title": "bbPress <= 2.5.9 - Display Name & Avatar Potential Cross-Site Scripting (XSS)",
+                        "fixed_in": "2.5.10",
+                        "references": [
+                            "https://wptavern.com/bbpress-2-5-10-patches-security-vulnerability",
+                            "https://bbpress.org/blog/2016/07/bbpress-2-5-10-security-release/",
+                            "https://plugins.trac.wordpress.org/changeset/1454184/bbpress"
+                        ]
+                    },
+                    {
+                        "title": "bbPress <= 2.5.12 - Unauthenticated SQL Injection",
+                        "fixed_in": "2.5.13",
+                        "references": [
+                            "https://blog.sucuri.net/2017/11/sql-injection-bbpress.html",
+                            "https://hackerone.com/reports/179920"
+                        ]
+                    },
+                    {
+                        "title": "bbPress < 2.6.5 - Unauthenticated Privilege Escalation when New User Registration enabled",
+                        "fixed_in": "2.6.5",
+                        "references": [
+                            "https://bbpress.org/blog/2020/05/bbpress-2-6-5-is-out/"
+                        ]
+                    },
+                    {
+                        "title": "bbPress 2.6-2.6.5 - Authenticated Privilege Escalation via the Super Moderator feature",
+                        "fixed_in": "2.6.5",
+                        "references": [
+                            "https://bbpress.org/blog/2020/05/bbpress-2-6-5-is-out/",
+                            "https://bbpress.trac.wordpress.org/changeset/7089"
+                        ]
+                    },
+                    {
+                        "title": "bbPress < 2.6.5 - Authenticated Stored Cross-Site Scripting via the forums list table",
+                        "fixed_in": "2.6.5",
+                        "references": [
+                            "https://bbpress.org/blog/2020/05/bbpress-2-6-5-is-out/",
+                            "https://hackerone.com/reports/881918"
+                        ]
+                    },
+                    {
+                        "title": "bbPress < 2.6.0 - Subscriber+ Stored Cross-Site Scripting via Post Slug",
+                        "fixed_in": "2.6.0",
+                        "references": [
+                            "https://blog.sonarsource.com/wordpress-stored-xss-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "bbPress < 2.6.12 - Cross-Site Request Forgery to Limited Privilege Escalation",
+                        "fixed_in": "2.6.12",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2d776d94-8c81-4e88-bae3-946824a75c09"
+                        ]
+                    }
+                ]
+            },
+            "buddypress": {
+                "vulnerabilities": [
+                    {
+                        "title": "Buddypress <= 1.9.1 - Crafted bp_new_group_id Cookie Arbitrary Group Manipulation",
+                        "fixed_in": "1.9.2",
+                        "references": [
+                            "https://packetstormsecurity.com/files/125213/"
+                        ]
+                    },
+                    {
+                        "title": "Buddypress <= 1.9.1 - Stored Cross-Site Scripting (XSS)",
+                        "fixed_in": "1.9.2",
+                        "references": [
+                            "https://packetstormsecurity.com/files/125212/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress 1.7.1 - Multiple SQL Injections",
+                        "fixed_in": "1.7.2",
+                        "references": []
+                    },
+                    {
+                        "title": "Buddypress <= 1.5.4 - SQL Injection",
+                        "fixed_in": "1.5.5",
+                        "references": []
+                    },
+                    {
+                        "title": "BuddyPress 1.2.9 - SQL Injection",
+                        "fixed_in": "1.2.10",
+                        "references": []
+                    },
+                    {
+                        "title": "BuddyPress <=  2.3.4 - Authenticated Privilege Escalation",
+                        "fixed_in": "2.3.5",
+                        "references": [
+                            "https://buddypress.org/2015/11/buddypress-2-3-5/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress  2.0-2.7.3 - Arbitrary File Deletion",
+                        "fixed_in": "2.7.4",
+                        "references": [
+                            "https://wptavern.com/buddypress-2-7-4-patches-security-vulnerability-that-could-allow-arbitrary-file-deletion",
+                            "https://buddypress.org/2016/12/buddypress-2-7-4-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress 5.0.0-5.1.1 - Private Data Exposure via REST API",
+                        "fixed_in": "5.1.2",
+                        "references": [
+                            "https://buddypress.org/2020/01/buddypress-5-1-2/",
+                            "https://github.com/buddypress/BuddyPress/security/advisories/GHSA-3j78-7m59-r7gv"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 5.1.1 - Denial of Service",
+                        "fixed_in": "5.1.1",
+                        "references": [
+                            "https://buddypress.org/2019/12/buddypress-5-1-1/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 6.4.0 - Lack of Capability Check on Profile Page",
+                        "fixed_in": "6.4.0",
+                        "references": [
+                            "https://buddypress.org/2020/11/buddypress-6-4-0-maintenance-and-security-release/",
+                            "https://codex.buddypress.org/releases/version-6-4-0/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 7.2.1 - REST API Privilege Escalation",
+                        "fixed_in": "7.2.1",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-2-1/",
+                            "https://buddypress.org/2021/03/buddypress-7-2-1-security-release/",
+                            "https://github.com/buddypress/BuddyPress/security/advisories/GHSA-m6j4-8r7p-wpp3",
+                            "https://hackerone.com/reports/1107282"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress <  7.2.1 -  Force a Friendship",
+                        "fixed_in": "7.2.1",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-2-1/",
+                            "https://buddypress.org/2021/03/buddypress-7-2-1-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress <  7.2.1 - Read Private Messages",
+                        "fixed_in": "7.2.1",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-2-1/",
+                            "https://buddypress.org/2021/03/buddypress-7-2-1-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress <  7.2.1 - Manage BuddyPress Member Types",
+                        "fixed_in": "7.2.1",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-2-1/",
+                            "https://buddypress.org/2021/03/buddypress-7-2-1-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress <  7.2.1 - Invite Member to Join Group",
+                        "fixed_in": "7.2.1",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-2-1/",
+                            "https://buddypress.org/2021/03/buddypress-7-2-1-security-release/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 7.3.0 - Multiple Authenticated REST API Vulnerabilities",
+                        "fixed_in": "7.3.0",
+                        "references": [
+                            "https://codex.buddypress.org/releases/version-7-3-0/",
+                            "https://buddypress.org/2021/04/buddypress-7-3-0-maintenance-security-release/",
+                            "https://plugins.trac.wordpress.org/changeset/2514559/buddypress"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 9.1.1 - Activation Key Disclosure",
+                        "fixed_in": "9.1.1",
+                        "references": [
+                            "https://buddypress.org/2021/08/buddypress-9-1-1-security-and-maintenance-release/",
+                            "https://plugins.trac.wordpress.org/changeset/2584542/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 9.1.1 - SQL Injections",
+                        "fixed_in": "9.1.1",
+                        "references": [
+                            "https://buddypress.org/2021/08/buddypress-9-1-1-security-and-maintenance-release/",
+                            "https://plugins.trac.wordpress.org/changeset/2584542/"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 11.3.2 - Contributor+ Stored XSS",
+                        "fixed_in": "11.3.2",
+                        "references": [
+                            "https://patchstack.com/database/vulnerability/buddypress/wordpress-buddypress-plugin-11-3-1-cross-site-scripting-xss-vulnerability"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 12.4.1 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                        "fixed_in": "12.4.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3657384e-025a-44ad-8b7e-1a2fea17dcc3"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 12.5.1 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                        "fixed_in": "12.5.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/113c154d-94a0-41da-a5ed-d9b2617e1c2c"
+                        ]
+                    },
+                    {
+                        "title": "BuddyPress < 14.2.1 - Authenticated (Subscriber+) Directory Traversal",
+                        "fixed_in": "14.2.1",
+                        "references": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4327f414-64f4-4193-a5c0-2a5ecdd75e11"
+                        ]
+                    }
+                ]
+            }
+        },
+        "scan_summary": {
+            "total_plugins_detected": 21,
+            "vulnerable_plugins": 19,
+            "total_vulnerabilities": 312
+        }
+    }
+}

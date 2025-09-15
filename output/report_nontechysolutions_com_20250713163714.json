@@ -1,0 +1,184 @@
+{
+    "domain": "nontechysolutions.com",
+    "ip_address": "88.223.91.94",
+    "geoip": {
+        "ip": "88.223.91.94",
+        "country": "Indonesia",
+        "region": "Jakarta",
+        "city": "Jakarta",
+        "latitude": -6.2208,
+        "longitude": 106.8403
+    },
+    "ssl_certificate": {
+        "subject": {
+            "commonName": "nontechysolutions.com"
+        },
+        "issuer": {
+            "countryName": "AT",
+            "organizationName": "ZeroSSL",
+            "commonName": "ZeroSSL RSA Domain Secure Site CA"
+        },
+        "valid_from": "Jun  2 00:00:00 2025 GMT",
+        "valid_to": "Aug 31 23:59:59 2025 GMT",
+        "subject_alt_names": [
+            "nontechysolutions.com",
+            "www.nontechysolutions.com"
+        ]
+    },
+    "paths_found": {
+        "found": [
+            {
+                "path": "/.git/config",
+                "status_code": 403,
+                "content_type": "text/html"
+            }
+        ]
+    },
+    "subdomains": {
+        "found": [
+            {
+                "subdomain": "ftp.nontechysolutions.com",
+                "ips": [
+                    "145.223.108.176"
+                ],
+                "cname": null
+            },
+            {
+                "subdomain": "www.nontechysolutions.com",
+                "ips": [
+                    "153.92.12.195",
+                    "2a02:4780:1b:4c4b:31f8:e8a0:dd75:b2ba",
+                    "2a02:4780:3b:111f:d2f0:fe2b:d6e9:cf06",
+                    "88.223.91.121"
+                ],
+                "cname": "www.nontechysolutions.com.cdn.hstgr.net."
+            }
+        ]
+    },
+    "wayback_urls": {
+        "urls": [
+            "https://web.archive.org/web/20230722095019/https://nontechysolutions.com/",
+            "https://web.archive.org/web/20230723130840/https://nontechysolutions.com/"
+        ],
+        "count": 2
+    },
+    "open_ports": {
+        "ip": "88.223.91.94",
+        "open_ports": {
+            "80": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 13 Jul 2025 08:36:33 GMT\r\nContent-Type: text/html\r\nContent-Length: 150\r\nConnection: close\r\nServer: hcdn\r\nalt-svc: h3=\":443\"; ma=86400\r\nx-hcdn-request-id: 0ab9c14b5137e87a5934aee774970a72-dci-edge3\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body>\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>",
+            "443": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 13 Jul 2025 08:36:33 GMT\r\nContent-Type: text/html\r\nContent-Length: 150\r\nConnection: close\r\nServer: hcdn\r\nalt-svc: h3=\":443\"; ma=86400\r\nx-hcdn-request-id: 02b8a5857a051fa4cdcd3d458fd20192-dci-edge3\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body>\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>",
+            "21": "No banner (timeout)",
+            "22": "No banner (timeout)",
+            "53": "No banner (timeout)",
+            "25": "No banner (timeout)",
+            "23": "No banner (timeout)",
+            "194": "No banner (timeout)",
+            "587": "No banner (timeout)",
+            "1080": "No banner (timeout)",
+            "445": "No banner (timeout)",
+            "123": "No banner (timeout)",
+            "995": "No banner (timeout)",
+            "119": "No banner (timeout)",
+            "993": "No banner (timeout)",
+            "1194": "No banner (timeout)",
+            "110": "No banner (timeout)",
+            "465": "No banner (timeout)",
+            "143": "No banner (timeout)",
+            "161": "No banner (timeout)",
+            "1433": "No banner (timeout)",
+            "1521": "No banner (timeout)",
+            "1723": "No banner (timeout)",
+            "3306": "No banner (timeout)",
+            "3389": "No banner (timeout)",
+            "5432": "No banner (timeout)",
+            "5900": "No banner (timeout)",
+            "8080": "No banner (timeout)",
+            "6379": "No banner (timeout)",
+            "8000": "No banner (timeout)",
+            "8888": "No banner (timeout)",
+            "8443": "No banner (timeout)",
+            "27017": "No banner (timeout)",
+            "9090": "No banner (timeout)"
+        }
+    },
+    "social_links": [
+        {
+            "platform": "Facebook",
+            "url": "https://www.facebook.com/pencidesign"
+        }
+    ],
+    "tech_stack": {
+        "server": "hcdn",
+        "x_powered_by": "Not specified",
+        "title": "Non Techy Solutions - Build, Optimize, and Grow Your Website with Ease",
+        "generator": "auto-sizes 1.5.0",
+        "security_headers": {
+            "Content-Security-Policy": "upgrade-insecure-requests"
+        }
+    },
+    "dns": {
+        "A": [
+            "88.223.91.94",
+            "91.108.119.28"
+        ],
+        "MX": [],
+        "NS": [],
+        "TXT": []
+    },
+    "whois": {
+        "error": "No valid WHOIS data returned for nontechysolutions.com."
+    },
+    "builtwith": {
+        "font-scripts": [
+            "Google Font API"
+        ],
+        "javascript-frameworks": [
+            "Lazy.js",
+            "Lightbox",
+            "jQuery",
+            "Prototype",
+            "RequireJS"
+        ],
+        "photo-galleries": [
+            "Lightbox",
+            "jQuery"
+        ],
+        "widgets": [
+            "OWL Carousel"
+        ],
+        "ecommerce": [
+            "WooCommerce"
+        ],
+        "cms": [
+            "WordPress"
+        ],
+        "programming-languages": [
+            "PHP"
+        ],
+        "blogs": [
+            "PHP",
+            "WordPress"
+        ]
+    },
+    "reverse_ip": {
+        "source": "All Fallbacks",
+        "error": "All reverse IP lookup sources failed. Details: Shodan: Shodan API key not set.; HackerTarget: API rate limit exceeded or API key required.; ViewDNS: Network error: 403 Client Error: Forbidden for url: https://viewdns.info/reverseip/?host=88.223.91.94&t=1; ZoomEye: An unexpected error occurred with ZoomEye: resource credits is insufficient",
+        "domains": []
+    },
+    "breach_check": {
+        "note": "Tidak ada email ditemukan di WHOIS"
+    },
+    "vulnerabilities": {
+        "note": "Tidak ada kerentanan spesifik yang ditemukan untuk teknologi yang terdeteksi."
+    },
+    "vulnerabilities_by_keyword": {
+        "results": [
+            {
+                "id": "OBB:1124635",
+                "title": "fabjobs.co.nz Cross Site Scripting vulnerability ",
+                "cvss_score": 0.0,
+                "href": "https://www.openbugbounty.org/reports/1124635/"
+            }
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+admin
+login
+dashboard
+wp-admin
+robots.txt
+.git/config
+.env
+api
+test
+dev
+masuk
+coba
+percobaan
