@@ -10,7 +10,7 @@ setup(
     name="modular-reconx",
     version="1.1.0",
     author="Reynov Christian",
-    author_email="reynov@chrisnov.com",
+    author_email="contact@chrisnov.com",
     description="A modular OSINT tool for performing complete analysis of domains or websites using open-source intelligence techniques",
     long_description=long_description,
     long_description_content_type="text/markdown",
