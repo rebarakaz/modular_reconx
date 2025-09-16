@@ -8,10 +8,12 @@ from datetime import datetime
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+import lzma
+
 # --- Configuration ---
-NVD_BASE_URL = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-{year}.json.zip"
-NVD_MODIFIED_URL = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-modified.json.zip"
-NVD_START_YEAR = 2019  # Or any year you want to start from
+NVD_BASE_URL = "https://github.com/fkie-cad/nvd-json-data-feeds/releases/latest/download/CVE-{year}.json.xz"
+NVD_MODIFIED_URL = "https://github.com/fkie-cad/nvd-json-data-feeds/releases/latest/download/CVE-Modified.json.xz"
+NVD_START_YEAR = 1999  # Or any year you want to start from
 NVD_DATA_DIR = "nvd_data"
 
 GEOLITE_BASE_URL = "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={key}&suffix=tar.gz"
@@ -55,26 +57,30 @@ def download_nvd_feeds():
     # Download yearly feeds
     for year in range(NVD_START_YEAR, current_year + 1):
         url = NVD_BASE_URL.format(year=year)
-        zip_path = os.path.join(NVD_DATA_DIR, f"nvdcve-1.1-{year}.json.zip")
-        if download_file(url, zip_path):
+        xz_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json.xz")
+        json_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json")
+        if download_file(url, xz_path):
             try:
-                with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                    zip_ref.extractall(NVD_DATA_DIR)
-                print(f"Successfully extracted {os.path.basename(zip_path)}")
-                os.remove(zip_path) # Clean up the zip file
-            except zipfile.BadZipFile:
-                print(f"Error: {os.path.basename(zip_path)} is not a valid zip file.")
+                with lzma.open(xz_path, 'rb') as f_in:
+                    with open(json_path, 'wb') as f_out:
+                        f_out.write(f_in.read())
+                print(f"Successfully extracted {os.path.basename(xz_path)}")
+                os.remove(xz_path) # Clean up the xz file
+            except lzma.LZMAError:
+                print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
 
     # Download modified feed
-    zip_path = os.path.join(NVD_DATA_DIR, "nvdcve-1.1-modified.json.zip")
-    if download_file(NVD_MODIFIED_URL, zip_path):
+    xz_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json.xz")
+    json_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json")
+    if download_file(NVD_MODIFIED_URL, xz_path):
         try:
-            with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                zip_ref.extractall(NVD_DATA_DIR)
-            print(f"Successfully extracted {os.path.basename(zip_path)}")
-            os.remove(zip_path)
-        except zipfile.BadZipFile:
-            print(f"Error: {os.path.basename(zip_path)} is not a valid zip file.")
+            with lzma.open(xz_path, 'rb') as f_in:
+                    with open(json_path, 'wb') as f_out:
+                        f_out.write(f_in.read())
+            print(f"Successfully extracted {os.path.basename(xz_path)}")
+            os.remove(xz_path)
+        except lzma.LZMAError:
+            print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
 
 def download_geolite_db():
     """Downloads and extracts the GeoLite2 City database."""
