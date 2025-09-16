@@ -10,27 +10,27 @@ from pyfiglet import figlet_format
 from termcolor import colored
 
 # Local application imports
-from modules.breach_check import check_email_breach
-from modules.builtwith_scan import detect_builtwith
-from modules.dns_lookup import get_dns
-from modules.geoip_lookup import geoip_lookup
-from modules.ip_lookup import get_ip
-from modules.path_bruteforce import bruteforce_paths
-from modules.port_scanner import scan_ports
-from modules.reverse_ip import reverse_ip_lookup
-from modules.social_finder import find_social_links
-from modules.ssl_cert_info import get_ssl_info
-from modules.subdomain_enum import enumerate_subdomains
-from modules.tech_stack import get_tech_stack
-from modules.utils import save_report
-from modules.vuln_scanner import (
+from .modules.breach_check import check_email_breach
+from .modules.builtwith_scan import detect_builtwith
+from .modules.dns_lookup import get_dns
+from .modules.geoip_lookup import geoip_lookup
+from .modules.ip_lookup import get_ip
+from .modules.path_bruteforce import bruteforce_paths
+from .modules.port_scanner import scan_ports
+from .modules.reverse_ip import reverse_ip_lookup
+from .modules.social_finder import find_social_links
+from .modules.ssl_cert_info import get_ssl_info
+from .modules.subdomain_enum import enumerate_subdomains
+from .modules.tech_stack import get_tech_stack
+from .modules.utils import save_report
+from .modules.vuln_scanner import (
     check_versioned_vulnerabilities,
     search_general_vulnerabilities,
 )
-from modules.wayback_machine import get_wayback_urls
-from modules.whois_lookup import get_whois
-from modules.wp_scanner import scan_wordpress_site
-from modules.ct_log_monitor import monitor_certificate_transparency
+from .modules.wayback_machine import get_wayback_urls
+from .modules.whois_lookup import get_whois
+from .modules.wp_scanner import scan_wordpress_site
+from .modules.ct_log_monitor import monitor_certificate_transparency
 
 # Load environment variables
 load_dotenv()
