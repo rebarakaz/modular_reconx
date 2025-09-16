@@ -9,7 +9,7 @@ try:
     from importlib.resources import files
 except ImportError:
     # Python 3.8
-    from importlib_resources import files
+    from importlib_resources import files  # pyright: ignore[reportMissingImports]
 
 
 def get_resource_path(relative_path: str) -> str:
