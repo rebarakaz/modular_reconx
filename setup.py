@@ -43,14 +43,14 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "reconx=scan:main",
-            "modular-reconx=scan:main",
+            "reconx=modular_reconx.scan:main",
+            "modular-reconx=modular_reconx.scan:main",
         ],
     },
     package_data={
-        "": ["data/*", "nvd_data/*", ".env.example"],
+        "modular_reconx": ["data/*"],
     },
     data_files=[
-        ("data", ["data/subdomains.txt", "data/common_paths.txt"]),
+        ("data", ["modular_reconx/data/subdomains.txt", "modular_reconx/data/common_paths.txt"]),
     ],
 )
