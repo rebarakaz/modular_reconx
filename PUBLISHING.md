@@ -3,7 +3,7 @@
 ## Repository Information
 - **Repository Name**: ModularReconX
 - **Owner**: rebarakaz
-- **URL**: https://github.com/rebarakaz/ModularReconX
+- **URL**: https://github.com/rebarakaz/modular_reconx
 
 ## Project Overview
 Modular ReconX is a comprehensive OSINT (Open Source Intelligence) tool built in Python for performing complete reconnaissance on domains or websites. It provides security professionals, penetration testers, and researchers with a powerful suite of tools for gathering intelligence using open-source techniques.
