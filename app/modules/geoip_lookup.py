@@ -1,25 +1,16 @@
 import geoip2.database
 import os
-import sys
 import geoip2.errors
 import logging
+
+from .utils import get_resource_path
 
 logger = logging.getLogger(__name__)
 
 
-def _get_resource_path(relative_path):
-    if getattr(sys, "frozen", False):
-        base_path = getattr(
-            sys, "_MEIPASS", os.path.dirname(os.path.abspath(sys.executable))
-        )
-    else:
-        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
-
-
 def geoip_lookup(ip, db_path=None):
     if db_path is None:
-        db_path = _get_resource_path("data/GeoLite2-City.mmdb")
+        db_path = get_resource_path("data/GeoLite2-City.mmdb")
 
     if not os.path.exists(db_path):
         logger.error(f"GeoLite2 database not found. Looked at: {db_path}")

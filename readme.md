@@ -33,9 +33,8 @@
 ### 1. Prerequisites
 - Python 3.8+
 
-### 2. Installation Options
+### 2. Installation
 
-#### Option A: Install as a Package (Recommended)
 ```bash
 # Clone the repository
 git clone https://github.com/rebarakaz/modular_reconx.git
@@ -50,21 +49,6 @@ This installation method allows you to run the tool from anywhere using:
 reconx example.com
 # or
 modular-reconx example.com
-```
-
-#### Option B: Traditional Installation
-```bash
-# Clone the repository
-git clone https://github.com/rebarakaz/modular_reconx.git
-cd modular_reconx
-
-# Create and activate a virtual environment
-python -m venv venv
-# On Windows: venv\Scripts\activate
-# On macOS/Linux: source venv/bin/activate
-
-# Install the required packages
-pip install -r requirements.txt
 ```
 
 ### 3. Configuration (API Keys)
@@ -115,27 +99,20 @@ Some modules require local databases to function. A script is provided to downlo
 
 ## 🚀 How to Run
 
-### If installed as a package (Option A):
 ```bash
 reconx example.com
 # or
 modular-reconx example.com
 ```
 
-### If using traditional installation (Option B):
-Run a full scan and save the report as a JSON file (default):
-```bash
-python scan.py example.com
-```
-
 To speed up the scan, you can skip the slower modules like port scanning and path bruteforcing:
 ```bash
-python scan.py example.com --skip-ports --skip-bruteforce
+reconx example.com --skip-ports --skip-bruteforce
 ```
 
 To enable domain correlation (compare WHOIS data of reverse IP results):
 ```bash
-python scan.py example.com --correlate
+reconx example.com --correlate
 ```
 
 Results are saved as a JSON file in the `output/` directory.
@@ -175,11 +152,11 @@ Results are saved as a JSON file in the `output/` directory.
 
 ## 📁 Directory Structure
 
-- `data/`: Contains wordlists, GeoIP database, and NVD vulnerability database
-- `modules/`: Individual OSINT modules
+- `app/data/`: Contains wordlists, GeoIP database, and NVD vulnerability database
+- `app/modules/`: Individual OSINT modules
 - `nvd_data/`: NVD JSON data files for offline vulnerability checking
 - `output/`: JSON scan reports
-- `scan.py`: Main execution script
+- `app/scan.py`: Main execution script
 - `setup.py`: Package installation script
 - `requirements.txt`: Python dependencies
 - `.env`: Configuration file for API keys

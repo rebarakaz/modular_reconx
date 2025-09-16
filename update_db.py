@@ -5,7 +5,7 @@ import os
 import glob  # To search for all .json files in a folder
 from tqdm import tqdm  # For a nice progress bar
 
-DB_PATH = "data/vulnerabilities.db"
+DB_PATH = "app/data/vulnerabilities.db"
 NVD_DATA_DIR = "nvd_data"
 
 

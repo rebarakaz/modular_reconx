@@ -17,7 +17,7 @@ NVD_START_YEAR = 1999  # Or any year you want to start from
 NVD_DATA_DIR = "nvd_data"
 
 GEOLITE_BASE_URL = "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={key}&suffix=tar.gz"
-DATA_DIR = "data"
+DATA_DIR = "app/data"
 GEOLITE_TAR_FILENAME = "GeoLite2-City.tar.gz"
 GEOLITE_DB_FILENAME = "GeoLite2-City.mmdb"
 

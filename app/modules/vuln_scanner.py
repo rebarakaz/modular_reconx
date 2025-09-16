@@ -5,9 +5,11 @@ import logging
 import sqlite3
 from typing import Dict, Any, List
 
+from .utils import get_resource_path
+
 logger = logging.getLogger(__name__)
 
-DB_PATH = "data/vulnerabilities.db"
+DB_PATH = get_resource_path("data/vulnerabilities.db")
 VULNERS_API_URL = "https://vulners.com/api/v3/search/bulletin/"
 # We still prepare search_general_vulnerabilities as a backup
 VULNERS_LUCENE_API_URL = "https://vulners.com/api/v3/search/lucene/"
