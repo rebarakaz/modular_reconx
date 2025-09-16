@@ -43,14 +43,14 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "reconx=modular_reconx.scan:main",
-            "modular-reconx=modular_reconx.scan:main",
+            "reconx=app.scan:main",
+            "modular-reconx=app.scan:main",
         ],
     },
     package_data={
-        "modular_reconx": ["data/*"],
+        "app": ["data/*"],
     },
     data_files=[
-        ("data", ["modular_reconx/data/subdomains.txt", "modular_reconx/data/common_paths.txt"]),
+        ("data", ["app/data/subdomains.txt", "app/data/common_paths.txt"]),
     ],
 )

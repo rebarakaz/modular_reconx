@@ -13,8 +13,8 @@ scan.spec
 build.spec
 
 # Local data files - should be downloaded by the user
-modular_reconx/data/GeoLite2-City.mmdb
-modular_reconx/data/vulnerabilities.db
+app/data/GeoLite2-City.mmdb
+app/data/vulnerabilities.db
 osint_tool.log
 
 # Cache files
