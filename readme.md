@@ -96,6 +96,78 @@ Some modules require local databases to function. A script is provided to downlo
     python update_db.py
     ```
 
+## 🐧 Linux Specific Instructions
+
+### Installation on Linux
+
+The installation process on Linux is identical to other platforms:
+
+```bash
+# Clone the repository
+git clone https://github.com/rebarakaz/modular_reconx.git
+cd modular_reconx
+
+# Install as a package
+pip install -e .
+```
+
+### Running with Correct Permissions
+
+On Linux systems, you might encounter permission issues with some modules. If you experience problems:
+
+1.  Ensure your user has appropriate permissions:
+    ```bash
+    # Make sure Python scripts are executable
+    chmod +x *.py
+    ```
+
+2.  If you encounter issues with the port scanner, you might need to run with elevated privileges:
+    ```bash
+    # For extensive port scanning (optional)
+    sudo reconx example.com
+    ```
+
+### Virtual Environment (Recommended)
+
+For better isolation and to avoid permission issues, it's recommended to use a virtual environment:
+
+```bash
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Install the package
+pip install -e .
+
+# Run the tool
+reconx example.com
+
+# Deactivate when done
+deactivate
+```
+
+### Troubleshooting on Linux
+
+If you encounter issues with data files not being found:
+
+1.  Verify the package is correctly installed:
+    ```bash
+    pip show modular-reconx
+    ```
+
+2.  Check that data files are in the correct location:
+    ```bash
+    # After installation, data files should be accessible
+    python -c "from app.modules.utils import get_resource_path; print(get_resource_path('data/subdomains.txt'))"
+    ```
+
+3.  If you still have issues, try reinstalling:
+    ```bash
+    pip uninstall modular-reconx
+    pip install -e .
+    ```
 
 ## 🚀 How to Run
 
