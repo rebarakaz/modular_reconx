@@ -154,8 +154,8 @@ def filter_related_domains(
 
 
 def scan(
-    domain: str,
-    output_format: str,
+    target: str,
+    output_format: str = "json",
     skip_ports: bool = False,
     skip_bruteforce: bool = False,
     correlate_domains: bool = False,
@@ -165,16 +165,34 @@ def scan(
     image_forensics: bool = False,
     social_eng: bool = False,
     reverse_image: bool = False,
+    enhanced_subdomains: bool = False,
 ) -> None:
+    """
+    Orchestrates the scanning process.
+    
+    Args:
+        target: The domain name or local file path to scan.
+        output_format: The format of the output report (json or txt).
+        skip_ports: If True, skips the port scanning module.
+        skip_bruteforce: If True, skips the path bruteforcing module.
+        correlate_domains: If True, correlates reverse IP results with WHOIS data.
+        bug_hunt_mode: If True, enables advanced bug hunting modules.
+        cloud_enum: If True, enables cloud storage enumeration.
+        metadata_analysis: If True, enables metadata analysis.
+        image_forensics: If True, enables image forensics.
+        social_eng: If True, enables social engineering recon.
+        reverse_image: If True, enables reverse image search.
+        enhanced_subdomains: If True, uses a larger wordlist for subdomains.
+    """
     # Check if input is a local file
-    if os.path.isfile(domain):
-        print(f"\n[📂] Analyzing local file: {domain}")
-        logging.info(f"Starting analysis for local file: {domain}")
-        results: Dict[str, Any] = {"file": domain}
+    if os.path.isfile(target):
+        print(f"\n[📂] Analyzing local file: {target}")
+        logging.info(f"Starting analysis for local file: {target}")
+        results: Dict[str, Any] = {"file": target}
         
-        if domain.lower().endswith(('.jpg', '.jpeg', '.png', '.heic', '.tiff')):
+        if target.lower().endswith(('.jpg', '.jpeg', '.png', '.heic', '.tiff')):
             print("[*] Detected image file. Running Image Forensics...")
-            results["image_forensics"] = analyze_image(domain, is_local=True)
+            results["image_forensics"] = analyze_image(target, is_local=True)
             print("[+] Completed: Image Forensics")
             
             # For local files, we can't easily generate reverse links unless we upload it.
@@ -185,9 +203,9 @@ def scan(
                 print("[!] Reverse image search requires a public URL. Skipping for local file.")
             
             
-        elif domain.lower().endswith(('.pdf', '.docx')):
+        elif target.lower().endswith(('.pdf', '.docx')):
             print("[*] Detected document. Running Metadata Analysis...")
-            results["metadata_analysis"] = analyze_local_file(domain)
+            results["metadata_analysis"] = analyze_local_file(target)
             print("[+] Completed: Metadata Analysis")
             
         else:
@@ -198,6 +216,7 @@ def scan(
         print(f"\n✅ Results saved to: {filename}\n")
         return
 
+    domain = target
     # Validate input domain if not a file
     if not validate_domain(domain):
         print(f"[!] Invalid domain format: {domain}")
@@ -212,7 +231,7 @@ def scan(
     scans_to_run = {
         "whois": (get_whois, domain),
         "dns": (get_dns, domain),
-        "subdomains": (enumerate_subdomains, domain),
+        "subdomains": (lambda d: enumerate_subdomains(d, use_enhanced_wordlist=enhanced_subdomains), domain),
         "social_links": (find_social_links, domain),
         "wayback_urls": (get_wayback_urls, domain),
         "certificate_transparency": (monitor_certificate_transparency, domain),
@@ -520,6 +539,11 @@ def main():
         help="Enable reverse image search (Generates links for Google, Bing, etc.).",
     )
     parser.add_argument(
+        "--enhanced-subdomains",
+        action="store_true",
+        help="Use a larger wordlist for subdomain enumeration (slower but more comprehensive).",
+    )
+    parser.add_argument(
         "--version", action="version", version=f"Modular ReconX v{VERSION}"
     )
     setup_logging()
@@ -554,7 +578,9 @@ def main():
         metadata_analysis=args.metadata,
         image_forensics=args.forensics,
         social_eng=args.social,
+        social_eng=args.social,
         reverse_image=args.reverse,
+        enhanced_subdomains=args.enhanced_subdomains,
     )
 
 

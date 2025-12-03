@@ -81,6 +81,7 @@ def enumerate_subdomains(
     domain: str,
     wordlist_path: str = get_resource_path("data/subdomains.txt"),
     workers: int = 50,
+    use_enhanced_wordlist: bool = False,
 ) -> Dict[str, List[Dict[str, Any]]]:
     """
     Enumerates subdomains for a given domain using a wordlist and concurrency.
@@ -90,12 +91,11 @@ def enumerate_subdomains(
         domain: The target domain (e.g., 'example.com').
         wordlist_path: Path to the subdomain wordlist file.
         workers: Number of concurrent threads to use for DNS resolution.
+        use_enhanced_wordlist: Whether to use the larger wordlist.
 
     Returns:
         A dictionary containing a list of found subdomains, each with its IP(s) and CNAME.
     """
-    if record_types is None:
-        record_types = ["A", "AAAA", "CNAME"]
     
     # Use enhanced wordlist if requested
     if use_enhanced_wordlist:
