@@ -4,7 +4,7 @@
 
 - **Repository Name**: ModularReconX
 - **Owner**: rebarakaz
-- **URL**: https://github.com/rebarakaz/modular_reconx
+- **URL**: <https://github.com/rebarakaz/modular_reconx>
 
 ## Project Overview
 
@@ -57,6 +57,7 @@ Modular ReconX is a comprehensive OSINT (Open Source Intelligence) tool built in
    git add .
    git commit -m "Initial commit: Complete Modular ReconX v1.2.0 with all features"
    ```
+
 5. Push to GitHub:
 
    ```bash
@@ -83,9 +84,10 @@ modular-reconx example.com
 
 ## Author Credits
 
-**Reynov Christian aka BabyDev**
+### **Reynov Christian aka BabyDev**
+
 - Business: Chrisnov IT Solutions
-- Website: https://chrisnov.com
+- Website: <https://chrisnov.com>
 
 ## License
 
