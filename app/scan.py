@@ -186,7 +186,7 @@ def scan(
     """
     # Check if input is a local file
     if os.path.isfile(target):
-        print(f"\n[📂] Analyzing local file: {target}")
+        print(f"\n[FILE] Analyzing local file: {target}")
         logging.info(f"Starting analysis for local file: {target}")
         results: Dict[str, Any] = {"file": target}
         
@@ -213,7 +213,7 @@ def scan(
             results["error"] = "Unsupported file type"
             
         filename = save_report(results, output_format)
-        print(f"\n✅ Results saved to: {filename}\n")
+        print(f"\n[+] Results saved to: {filename}\n")
         return
 
     domain = target
@@ -223,7 +223,7 @@ def scan(
         logging.error(f"Invalid domain format: {domain}")
         return
     
-    print(f"\n[🔎] Starting OSINT scan for: {domain}")
+    print(f"\n[SCAN] Starting OSINT scan for: {domain}")
     logging.info(f"Starting new OSINT scan for domain: {domain}")
     results: Dict[str, Any] = {"domain": domain}
     
@@ -562,7 +562,7 @@ def main():
     print(colored(banner, "cyan"))
     print(
         colored(
-            f"Advanced OSINT Tool v{VERSION} | Made with 💖 by Chrisnov & Nai Momang | Cybersecurity Researchers\n",
+            f"Advanced OSINT Tool v{VERSION} | Made with <3 by Chrisnov & Nai Momang | Cybersecurity Researchers\n",
             "magenta",
         )
     )
@@ -577,7 +577,6 @@ def main():
         cloud_enum=args.cloud,
         metadata_analysis=args.metadata,
         image_forensics=args.forensics,
-        social_eng=args.social,
         social_eng=args.social,
         reverse_image=args.reverse,
         enhanced_subdomains=args.enhanced_subdomains,
