@@ -48,7 +48,7 @@ def download_file(url, dest_path):
 
 # --- Core Functions ---
 
-def download_nvd_feeds():
+def download_nvd_feeds(force=False):
     """Downloads and extracts NVD data feeds."""
     print("\n--- Downloading NVD Data Feeds ---")
     os.makedirs(NVD_DATA_DIR, exist_ok=True)
@@ -56,9 +56,17 @@ def download_nvd_feeds():
     
     # Download yearly feeds
     for year in range(NVD_START_YEAR, current_year + 1):
+        json_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json")
+        
+        # Skip if file exists and it's a past year (unless forced)
+        # We always download the current year as it changes frequently
+        if os.path.exists(json_path) and year < current_year and not force:
+            print(f"Skipping CVE-{year}.json (already exists). Use --force to redownload.")
+            continue
+            
         url = NVD_BASE_URL.format(year=year)
         xz_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json.xz")
-        json_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json")
+        
         if download_file(url, xz_path):
             try:
                 with lzma.open(xz_path, 'rb') as f_in:
@@ -69,9 +77,13 @@ def download_nvd_feeds():
             except lzma.LZMAError:
                 print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
 
-    # Download modified feed
+    # Download modified feed (always download unless specifically skipped, but here we treat it as essential for updates)
+    # However, if user wants to force, we force. If not, we still download it because it's "Modified".
+    # But wait, if we want to be strictly "update only", Modified IS the update.
     xz_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json.xz")
     json_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json")
+    
+    print("Downloading CVE-Modified.json (latest updates)...")
     if download_file(NVD_MODIFIED_URL, xz_path):
         try:
             with lzma.open(xz_path, 'rb') as f_in:
@@ -82,9 +94,16 @@ def download_nvd_feeds():
         except lzma.LZMAError:
             print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
 
-def download_geolite_db():
+def download_geolite_db(force=False):
     """Downloads and extracts the GeoLite2 City database."""
     print("\n--- Downloading GeoLite2 City Database ---")
+    
+    # Check if DB already exists
+    db_path = os.path.join(DATA_DIR, GEOLITE_DB_FILENAME)
+    if os.path.exists(db_path) and not force:
+        print(f"Skipping GeoLite2 database (already exists at {db_path}). Use --force to redownload.")
+        return
+
     load_dotenv()
     license_key = os.getenv("MAXMIND_LICENSE_KEY")
 
@@ -119,7 +138,8 @@ def download_geolite_db():
         except tarfile.TarError as e:
             print(f"Error extracting {tar_path}: {e}")
         finally:
-            os.remove(tar_path) # Clean up the tar.gz file
+            if os.path.exists(tar_path):
+                os.remove(tar_path) # Clean up the tar.gz file
 
 # --- Main Execution ---
 
@@ -127,14 +147,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download data dependencies for Modular ReconX.")
     parser.add_argument("--nvd", action="store_true", help="Download NVD data feeds only.")
     parser.add_argument("--geoip", action="store_true", help="Download GeoLite2 database only.")
+    parser.add_argument("--force", "-f", action="store_true", help="Force redownload of existing files.")
     args = parser.parse_args()
 
     if args.nvd and not args.geoip:
-        download_nvd_feeds()
+        download_nvd_feeds(force=args.force)
     elif args.geoip and not args.nvd:
-        download_geolite_db()
+        download_geolite_db(force=args.force)
     else:
         # Download both by default or if both flags are provided
-        download_nvd_feeds()
-        download_geolite_db()
+        download_nvd_feeds(force=args.force)
+        download_geolite_db(force=args.force)
         print("\nData download process complete.")

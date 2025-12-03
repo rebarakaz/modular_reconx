@@ -149,7 +149,14 @@ Some modules require local databases to function. A script is provided to downlo
     python download_data.py
     ```
 
-    This command will download the GeoLite2 database and the latest NVD vulnerability feeds. You can also run `python download_data.py --nvd` or `python download_data.py --geoip` to download them separately.
+    This command will download the GeoLite2 database and the latest NVD vulnerability feeds.
+    
+    **Note:** The script automatically skips existing files to save bandwidth. To force a redownload of all files, use the `--force` flag:
+    ```bash
+    python download_data.py --force
+    ```
+
+    You can also run `python download_data.py --nvd` or `python download_data.py --geoip` to download them separately.
 
 3. **Update the NVD Database:**
     After downloading the NVD JSON feeds, it's recommended to process them into the local database for the tool to use.
