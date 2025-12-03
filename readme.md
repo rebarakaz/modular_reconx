@@ -1,4 +1,4 @@
-# 🕵️ Modular ReconX v1.1
+# 🕵️ Modular ReconX v1.2.0
 
 <p align="center">
   <img src="splash.png" alt="Modular ReconX Splash Screen" width="600">
@@ -27,6 +27,28 @@
 - ✅ Caching Mechanism (1-hour cache for DNS and WHOIS lookups)
 - ✅ Input Validation (domain format validation)
 - ✅ Improved Error Handling
+- ✅ Enhanced Privacy Mode (passive-only scanning to avoid detection)
+- ✅ Proxy Support (SOCKS/HTTP proxy for anonymizing requests)
+- ✅ User-Agent Rotation (automatic rotation to avoid detection)
+- ✅ Rate Limiting Controls (configurable delays between requests)
+- ✅ Enhanced Vulnerability Scanning (local exploit database with offline searchsploit-like functionality)
+- ✅ Subdomain Enumeration Enhancements (permutation-based discovery and enhanced wordlists)
+- ✅ Parameter Analysis (identifies potential injection points)
+- ✅ JavaScript Analysis (finds sensitive data and security issues in JS files)
+- ✅ API Endpoint Discovery (uncovers hidden API endpoints)
+- ✅ Security Headers Analysis (checks for proper HTTP security headers)
+- ✅ Form Analysis (identifies security issues in HTML forms)
+- ✅ CORS Misconfiguration Checker (detects dangerous CORS policies)
+- ✅ Cookie Security Analysis (analyzes cookie security attributes)
+- ✅ Clickjacking Protection Checker (verifies anti-clickjacking measures)
+- ✅ HTTP Parameter Pollution Detector (identifies parameter duplication vulnerabilities)
+- ✅ **Cloud Enumeration** (AWS S3, Azure Blob, GCP Bucket)
+- ✅ **Metadata Analysis** (PDF/DOCX metadata extraction)
+- ✅ **Image Forensics** (EXIF data extraction)
+- ✅ **Social Engineering Recon** (Dorks & Email Pattern Analysis)
+- ✅ **Reverse Image Search** (Google Lens, Bing, Yandex, TinEye links)
+- ✅ **Docker Support** (Containerized deployment)
+- ✅ **Local File Analysis** (Analyze local images and documents)
 
 ## ⚙️ Setup
 
@@ -35,10 +57,15 @@
 
 ### 2. Installation
 
+#### Option A: Standard Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/rebarakaz/modular_reconx.git
 cd modular_reconx
+
+# Install dependencies
+pip install -r requirements.txt
 
 # Install as a package
 pip install -e .
@@ -50,6 +77,31 @@ reconx example.com
 # or
 modular-reconx example.com
 ```
+
+#### Option B: Docker Installation (Recommended)
+
+Docker provides an isolated environment with all dependencies pre-configured.
+
+```bash
+# Clone the repository
+git clone https://github.com/rebarakaz/modular_reconx.git
+cd modular_reconx
+
+# Build the Docker image
+docker build -t modular-reconx .
+
+# Run a scan
+docker run --rm modular-reconx example.com
+
+# Or use Docker Compose
+docker-compose run --rm reconx example.com
+```
+
+**Docker Benefits:**
+- No dependency conflicts
+- Consistent environment across platforms
+- Easy deployment and scaling
+- Isolated from host system
 
 ### 3. Configuration (API Keys)
 
@@ -182,14 +234,180 @@ To speed up the scan, you can skip the slower modules like port scanning and pat
 reconx example.com --skip-ports --skip-bruteforce
 ```
 
+To generate reports in different formats:
+```bash
+# Generate HTML report with visualizations
+reconx example.com --output html
+
+# Generate CSV reports for spreadsheet analysis
+reconx example.com --output csv
+```
+
 To enable domain correlation (compare WHOIS data of reverse IP results):
+```bash
+reconx example.com --correlate
+```
+
+To enable comprehensive bug hunting mode with advanced security analysis:
+```bash
+reconx example.com --bug-hunt
+```
+
+For enhanced privacy and security, you can use passive-only scanning mode:
+```bash
+reconx example.com --passive-only
+```
+
+To use a proxy for anonymizing requests:
+```bash
+reconx example.com --proxy http://127.0.0.1:8080
+```
+
+To set a custom user agent:
+```bash
+reconx example.com --user-agent "Custom User Agent String"
+```
+
+To add rate limiting between requests:
+```bash
+reconx example.com --rate-limit 1.0
+```
+
+You can combine multiple privacy and security options:
+```bash
+reconx example.com --passive-only --proxy http://127.0.0.1:8080 --rate-limit 0.5
+```
 ```bash
 reconx example.com --correlate
 ```
 
 Results are saved as a JSON file in the `output/` directory.
 
-## 🆕 What's New in v1.1
+## 🕵️ Advanced Usage
+
+### Cloud & Metadata
+```bash
+reconx example.com --cloud --metadata
+```
+
+### Forensics & Social Engineering
+```bash
+reconx example.com --forensics --social --reverse
+```
+
+### Local File Analysis
+You can run analysis directly on local files:
+```bash
+# Analyze an image for EXIF data
+reconx image.jpg
+
+# Analyze a document for metadata
+reconx report.pdf
+```
+
+## 📋 CLI Reference
+
+### New v1.2.0 Flags
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `--cloud` | Enable cloud storage enumeration (AWS/Azure/GCP) | `reconx example.com --cloud` |
+| `--metadata` | Extract metadata from public documents (PDF/DOCX) | `reconx example.com --metadata` |
+| `--forensics` | Analyze images for EXIF data | `reconx example.com --forensics` |
+| `--social` | Generate Google Dorks and analyze email patterns | `reconx example.com --social` |
+| `--reverse` | Generate reverse image search links | `reconx example.com --forensics --reverse` |
+
+### Combined Usage Examples
+
+```bash
+# Full OSINT scan with all new features
+reconx example.com --cloud --metadata --forensics --social --reverse
+
+# Cloud security assessment
+reconx example.com --cloud
+
+# Document intelligence gathering
+reconx example.com --metadata
+
+# Image forensics investigation
+reconx example.com --forensics --reverse
+
+# Social engineering recon
+reconx example.com --social
+
+# Local file analysis (auto-detects file type)
+reconx suspicious_image.jpg
+reconx leaked_document.pdf
+```
+
+## 🆕 What's New in v1.2.0
+
+### 🚀 Major New Features
+
+#### Cloud Storage Enumeration
+- **AWS S3 Bucket Discovery**: Automatically checks for public S3 buckets
+- **Azure Blob Storage**: Detects exposed Azure storage containers
+- **GCP Bucket Scanning**: Identifies publicly accessible Google Cloud buckets
+- **Smart Permutations**: Tests common naming patterns (dev, staging, prod, backup, etc.)
+- **Status Detection**: Distinguishes between public (200) and private (403) resources
+
+#### Document Metadata Analysis
+- **PDF Metadata Extraction**: Extracts author, creator, creation date, and software info
+- **DOCX Metadata Extraction**: Analyzes Word documents for metadata leakage
+- **Local File Support**: Analyze documents directly from your filesystem
+- **Wayback Machine Integration**: Finds historical documents via archive.org
+
+#### Image Forensics
+- **EXIF Data Extraction**: Pulls GPS coordinates, camera model, software, and timestamps
+- **Local & Remote Analysis**: Works with both local files and web-hosted images
+- **Automatic Image Discovery**: Scrapes domains for images to analyze
+- **Privacy Assessment**: Identifies metadata that could compromise privacy
+
+#### Social Engineering Reconnaissance
+- **Google Dork Generation**: Creates targeted dorks for:
+  - LinkedIn employee discovery
+  - Twitter/X account hunting
+  - Sensitive file exposure (PDFs, DOCX, XLSX)
+  - Login page identification
+- **Email Pattern Analysis**: Automatically infers corporate email formats
+- **Pattern Confidence Scoring**: Provides reliability metrics for discovered patterns
+
+#### Reverse Image Search
+- **Multi-Engine Support**: Generates search links for:
+  - Google Lens
+  - Google Images
+  - Bing Visual Search
+  - Yandex Images
+  - TinEye
+- **URL Encoding**: Properly handles special characters and spaces
+- **One-Click Access**: Direct links to search results
+
+#### Docker Support
+- **Containerized Deployment**: Full Docker and Docker Compose support
+- **Isolated Environment**: No dependency conflicts with host system
+- **Easy Scaling**: Simple deployment across multiple systems
+- **Volume Mapping**: Persistent output storage
+
+#### Unified CLI for Files & Domains
+- **Automatic Detection**: Tool recognizes whether input is a domain or file
+- **Supported File Types**: JPG, PNG, HEIC, TIFF, PDF, DOCX
+- **Seamless Workflow**: Same command structure for all input types
+
+### 🔧 Improvements
+- **Windows Compatibility**: Fixed all Unicode encoding issues for Windows users
+- **Dependency Management**: Updated Pillow to v12.0.0 for Python 3.13 support
+- **Error Handling**: Graceful handling of unsupported file types
+- **Test Coverage**: Comprehensive test suite with 100% pass rate
+
+### 📚 Documentation
+- **CHANGELOG.md**: Detailed release notes
+- **TESTING.md**: Complete testing documentation
+- **Updated AGENTS.md**: New module documentation for AI assistants
+- **Enhanced README**: Docker installation and advanced usage examples
+
+---
+
+## 📜 What's New in v1.1
 
 ### Performance Improvements
 - Added caching mechanism for DNS and WHOIS lookups (1-hour cache)
@@ -203,17 +421,8 @@ Results are saved as a JSON file in the `output/` directory.
 
 ### New Features
 - Domain correlation: Filter reverse IP results by WHOIS similarity
-- Enhanced WordPress plugin vulnerability scanning with multiple detection methods:
-  - CSS/JS file detection in wp-content/plugins/
-  - readme.txt file analysis
-  - HTML source code signature scanning
-  - WordPress REST API integration (when available)
-  - Meta tag and comment analysis
-- Certificate Transparency Log Monitoring for enhanced subdomain discovery:
-  - Multi-source CT log querying (crt.sh, CertSpotter, BufferOver)
-  - Passive reconnaissance capabilities
-  - Recently issued certificate discovery
-  - Comprehensive subdomain coverage beyond wordlists
+- Enhanced WordPress plugin vulnerability scanning with multiple detection methods
+- Certificate Transparency Log Monitoring for enhanced subdomain discovery
 - Offline NVD database support for vulnerability checks
 - Enhanced technology detection from HTTP headers
 

@@ -32,30 +32,11 @@ from .modules.whois_lookup import get_whois
 from .modules.wp_scanner import scan_wordpress_site
 from .modules.ct_log_monitor import monitor_certificate_transparency
 
-# Bug hunting modules
-from .modules.param_analysis import comprehensive_param_analysis
-from .modules.js_analysis import comprehensive_js_analysis
-from .modules.api_discovery import comprehensive_api_discovery
-from .modules.security_headers import comprehensive_security_analysis
-from .modules.form_analysis import comprehensive_form_analysis
-from .modules.cors_checker import comprehensive_cors_analysis
-from .modules.cookie_analysis import comprehensive_cookie_analysis
-from .modules.clickjacking_checker import comprehensive_clickjacking_analysis
-from .modules.param_pollution import comprehensive_parameter_pollution_analysis
-
-# New modules
-from .modules.cloud_enum import check_cloud_storage
-from .modules.metadata_analysis import analyze_metadata, analyze_local_file
-from .modules.image_forensics import analyze_image, find_images
-from .modules.social_eng import perform_social_recon
-from .modules.reverse_image import generate_reverse_links, print_reverse_links
-import os
-
 # Load environment variables
 load_dotenv()
 
 # Version information
-VERSION = "1.2.0"
+VERSION = "1.1"
 
 
 def setup_logging() -> None:
@@ -76,28 +57,28 @@ def setup_logging() -> None:
 def validate_domain(domain: str) -> bool:
     """
     Validate domain name format.
-    
+
     Args:
         domain: The domain name to validate
-        
+
     Returns:
         True if valid, False otherwise
     """
     if not domain or not isinstance(domain, str):
         return False
-    
+
     # Remove whitespace
     domain = domain.strip()
-    
+
     # Basic length check
     if len(domain) > 253:
         return False
-    
+
     # Regex pattern for domain validation
     pattern = re.compile(
         r"^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$"
     )
-    
+
     return bool(pattern.match(domain))
 
 
@@ -108,33 +89,33 @@ def filter_related_domains(
     Analyze reverse IP results and filter them based on WHOIS similarity.
     """
     filtered_results = {"likely_related": [], "other_neighbors": []}
-    
+
     # Get registrar name from the main target domain
     target_registrar = target_whois.get("registrar")
     if not target_registrar or not reverse_ip_results.get("domains"):
         # If not enough data, return the list as is
         filtered_results["other_neighbors"] = reverse_ip_results.get("domains", [])
         return filtered_results
-    
+
     # Get domain list from reverse IP results
     neighbor_domains = reverse_ip_results.get("domains", [])
-    
+
     print(
         f"[*] Starting WHOIS correlation for {len(neighbor_domains)} neighboring domains (this may be slow)..."
     )
-    
+
     for domain in neighbor_domains:
         # Validate domain before processing
         if not validate_domain(domain):
             filtered_results["other_neighbors"].append(domain)
             logging.warning(f"Invalid domain format for neighboring domain {domain}")
             continue
-        
+
         # Call the whois module for each neighboring domain
         try:
             neighbor_whois = get_whois(domain)  # Calling get_whois function from module
             neighbor_registrar = neighbor_whois.get("registrar")
-            
+
             # Compare registrars. This is a simple method, can be developed further
             if (
                 neighbor_registrar
@@ -149,7 +130,7 @@ def filter_related_domains(
             logging.warning(
                 f"Failed to perform WHOIS lookup for neighboring domain {domain}: {e}"
             )
-    
+
     return filtered_results
 
 
@@ -159,55 +140,17 @@ def scan(
     skip_ports: bool = False,
     skip_bruteforce: bool = False,
     correlate_domains: bool = False,
-    bug_hunt_mode: bool = False,
-    cloud_enum: bool = False,
-    metadata_analysis: bool = False,
-    image_forensics: bool = False,
-    social_eng: bool = False,
-    reverse_image: bool = False,
 ) -> None:
-    # Check if input is a local file
-    if os.path.isfile(domain):
-        print(f"\n[📂] Analyzing local file: {domain}")
-        logging.info(f"Starting analysis for local file: {domain}")
-        results: Dict[str, Any] = {"file": domain}
-        
-        if domain.lower().endswith(('.jpg', '.jpeg', '.png', '.heic', '.tiff')):
-            print("[*] Detected image file. Running Image Forensics...")
-            results["image_forensics"] = analyze_image(domain, is_local=True)
-            print("[+] Completed: Image Forensics")
-            
-            # For local files, we can't easily generate reverse links unless we upload it.
-            # But if the user provided a URL (even if treating as 'file' input logic catches it?), 
-            # actually os.path.isfile check prevents URLs here.
-            # So we only support reverse search for URLs or scraped images.
-            if reverse_image:
-                print("[!] Reverse image search requires a public URL. Skipping for local file.")
-            
-            
-        elif domain.lower().endswith(('.pdf', '.docx')):
-            print("[*] Detected document. Running Metadata Analysis...")
-            results["metadata_analysis"] = analyze_local_file(domain)
-            print("[+] Completed: Metadata Analysis")
-            
-        else:
-            print("[!] Unsupported file type for local analysis.")
-            results["error"] = "Unsupported file type"
-            
-        filename = save_report(results, output_format)
-        print(f"\n✅ Results saved to: {filename}\n")
-        return
-
-    # Validate input domain if not a file
+    # Validate input domain
     if not validate_domain(domain):
         print(f"[!] Invalid domain format: {domain}")
         logging.error(f"Invalid domain format: {domain}")
         return
-    
+
     print(f"\n[🔎] Starting OSINT scan for: {domain}")
     logging.info(f"Starting new OSINT scan for domain: {domain}")
     results: Dict[str, Any] = {"domain": domain}
-    
+
     # Define scans that only need a domain name (passive)
     scans_to_run = {
         "whois": (get_whois, domain),
@@ -217,12 +160,12 @@ def scan(
         "wayback_urls": (get_wayback_urls, domain),
         "certificate_transparency": (monitor_certificate_transparency, domain),
     }
-    
+
     # Initial IP lookup is blocking, as many other scans depend on it.
     print("[*] Looking up main IP...")
     ip = get_ip(domain)
     base_url = f"http://{domain}"
-    
+
     # Determine if active scans that require a live host are possible.
     if not ip:
         print(f"  [!] Failed to get IP for {domain}. Active scans will be skipped.")
@@ -232,7 +175,7 @@ def scan(
         results["ip_address"] = ip
         print(f"  [+] Found IP: {ip}")
         # base_url is already defined above
-        
+
         # Add active scans to the list
         active_scans = {
             "tech_stack": (get_tech_stack, base_url),
@@ -246,7 +189,7 @@ def scan(
         if not skip_bruteforce:
             active_scans["paths_found"] = (bruteforce_paths, base_url)
         scans_to_run.update(active_scans)
-    
+
     # Use ThreadPoolExecutor for cleaner and more modern concurrency management.
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=len(scans_to_run)
@@ -255,7 +198,7 @@ def scan(
             executor.submit(func, *args): key
             for key, (func, *args) in scans_to_run.items()
         }
-        
+
         print("[*] Running concurrent scans...")
         for future in concurrent.futures.as_completed(future_to_key):
             key = future_to_key[future]
@@ -268,11 +211,11 @@ def scan(
                 logging.error(
                     f"Module '{key}' failed for domain '{domain}'", exc_info=True
                 )
-    
+
     # --- IMPORTANT: Extract required results after all concurrent scans are complete ---
     builtwith_results = results.get("builtwith", {})
     tech_stack_results = results.get("tech_stack", {})
-    
+
     # Get the primary email for breach checking from WHOIS results
     primary_email: Optional[str] = None
     whois_data = results.get("whois", {})
@@ -282,14 +225,14 @@ def scan(
             primary_email = whois_emails[0]
         elif isinstance(whois_emails, str):
             primary_email = whois_emails
-    
+
     if primary_email:
         print("[*] Checking for data breaches for email...")
         results["breach_check"] = check_email_breach(primary_email)
         print("  [+] Completed: breach_check")
     else:
         results["breach_check"] = {"note": "No email found in WHOIS"}
-    
+
     # Check for versioned vulnerabilities based on tech stack
     # Ensure builtwith_results is a dict and not an error or empty
     if builtwith_results and not builtwith_results.get("error"):
@@ -304,7 +247,7 @@ def scan(
         results["vulnerabilities"] = {
             "note": "Version-specific vulnerability check skipped (BuiltWith data not available or error)."
         }
-    
+
     # Perform general keyword vulnerability search
     print(
         "  [+] Starting: general vulnerability search based on keywords (Vulners.com)..."
@@ -317,7 +260,7 @@ def scan(
     )
     results["vulnerabilities_by_keyword"] = search_general_vulnerabilities(keyword)
     print("  [+] Completed: vulnerabilities_by_keyword")
-    
+
     # --- "NOISY NEIGHBORS" CORRELATION FEATURE (FINAL VERSION) ---
     if correlate_domains:
         # This feature only runs if the user requests it with the --correlate flag
@@ -337,20 +280,20 @@ def scan(
     else:
         # If no flag, don't add this key to the report
         pass
-    
+
     # --- NEW FEATURE: WordPress Specific Scanner ---
     # Check for WordPress from various sources for better reliability
     is_wordpress = False
     generator_info = results.get("tech_stack", {}).get("generator", "")
     if generator_info and "wordpress" in generator_info.lower():
         is_wordpress = True
-    
+
     # Fallback to check builtwith results if generator doesn't mention WordPress
     if not is_wordpress:
         builtwith_cms = results.get("builtwith", {}).get("cms", [])
         if any("wordpress" in cms.lower() for cms in builtwith_cms):
             is_wordpress = True
-    
+
     if is_wordpress:
         print("\n[*] WordPress detected. Starting comprehensive plugin scan with WPScan...")
         
@@ -364,102 +307,6 @@ def scan(
         print(f"    - Vulnerable plugins: {wpscan_results.get('scan_summary', {}).get('vulnerable_plugins', 0)}")
         print(f"    - Total vulnerabilities: {wpscan_results.get('scan_summary', {}).get('total_vulnerabilities', 0)}")
 
-    # --- NEW FEATURE: Bug Hunting Modules ---
-    if bug_hunt_mode and ip:
-        print("\n[*] Bug hunting mode enabled. Starting advanced security analysis...")
-        
-        # Parameter Analysis
-        print("\n[*] Starting parameter analysis...")
-        results["param_analysis"] = comprehensive_param_analysis(base_url)
-        print("[+] Completed: parameter analysis")
-        
-        # JavaScript Analysis
-        print("\n[*] Starting JavaScript analysis...")
-        results["js_analysis"] = comprehensive_js_analysis(base_url)
-        print("[+] Completed: JavaScript analysis")
-        
-        # API Discovery
-        print("\n[*] Starting API endpoint discovery...")
-        results["api_discovery"] = comprehensive_api_discovery(base_url)
-        print("[+] Completed: API discovery")
-        
-        # Security Headers Analysis
-        print("\n[*] Starting security headers analysis...")
-        results["security_headers_analysis"] = comprehensive_security_analysis(base_url)
-        print("[+] Completed: security headers analysis")
-        
-        # Form Analysis
-        print("\n[*] Starting form analysis...")
-        results["form_analysis"] = comprehensive_form_analysis(base_url)
-        print("[+] Completed: form analysis")
-        
-        # CORS Analysis
-        print("\n[*] Starting CORS misconfiguration analysis...")
-        results["cors_analysis"] = comprehensive_cors_analysis(base_url)
-        print("[+] Completed: CORS analysis")
-        
-        # Cookie Analysis
-        print("\n[*] Starting cookie security analysis...")
-        results["cookie_analysis"] = comprehensive_cookie_analysis(base_url)
-        print("[+] Completed: cookie analysis")
-        
-        # Clickjacking Analysis
-        print("\n[*] Starting clickjacking protection analysis...")
-        results["clickjacking_analysis"] = comprehensive_clickjacking_analysis(base_url)
-        print("[+] Completed: clickjacking analysis")
-        
-        # HTTP Parameter Pollution Analysis
-        print("\n[*] Starting HTTP parameter pollution analysis...")
-        results["param_pollution_analysis"] = comprehensive_parameter_pollution_analysis(base_url)
-        print("[+] Completed: parameter pollution analysis")
-
-    # --- NEW FEATURE: Cloud Enumeration ---
-    if cloud_enum:
-        print("\n[*] Starting cloud storage enumeration...")
-        results["cloud_storage"] = check_cloud_storage(domain)
-        print("[+] Completed: cloud storage enumeration")
-
-    # --- NEW FEATURE: Metadata Analysis ---
-    if metadata_analysis:
-        print("\n[*] Starting metadata analysis (this may take a while)...")
-        results["metadata_analysis"] = analyze_metadata(domain)
-        results["metadata_analysis"] = analyze_metadata(domain)
-        print("[+] Completed: metadata analysis")
-
-    # --- NEW FEATURE: Image Forensics ---
-    if image_forensics:
-        print("\n[*] Starting image forensics...")
-        # First find images
-        print("  [*] Scraping domain for images...")
-        images = find_images(domain)
-        print(f"  [+] Found {len(images)} images.")
-        
-        results["image_forensics"] = {"images_found": images, "analysis": []}
-        
-        # Analyze top 5 images to avoid taking too long
-        for img_url in images[:5]:
-            print(f"  [*] Analyzing: {img_url}")
-            analysis = analyze_image(img_url, is_local=False)
-            results["image_forensics"]["analysis"].append(analysis)
-            
-            if reverse_image:
-                print_reverse_links(img_url)
-                # Add links to results
-                analysis["reverse_links"] = generate_reverse_links(img_url)
-            
-        print("[+] Completed: image forensics")
-
-    # --- NEW FEATURE: Social Engineering Recon ---
-    if social_eng:
-        print("\n[*] Starting social engineering reconnaissance...")
-        # Pass found emails from WHOIS if available
-        found_emails = []
-        if primary_email:
-            found_emails.append(primary_email)
-            
-        results["social_engineering"] = perform_social_recon(domain, found_emails)
-        print("[+] Completed: social engineering recon")
-
     filename = save_report(results, output_format)
     print(f"\n✅ Results saved to: {filename}\n")
 
@@ -469,7 +316,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Modular ReconX - Advanced OSINT reconnaissance tool."
     )
-    parser.add_argument("target", help="The domain to scan (e.g., example.com) OR local file path")
+    parser.add_argument("domain", help="The domain to scan (e.g., example.com)")
     parser.add_argument(
         "--output",
         choices=["json", "txt"],
@@ -484,77 +331,40 @@ def main():
         action="store_true",
         help="Skip the path bruteforcing module.",
     )
+
+    # --- ADD NEW ARGUMENT HERE ---
     parser.add_argument(
         "--correlate",
         action="store_true",
         help="Correlate reverse IP results by checking WHOIS similarity (slow).",
     )
     parser.add_argument(
-        "--bug-hunt",
-        action="store_true",
-        help="Enable comprehensive bug hunting mode with advanced security analysis.",
-    )
-    parser.add_argument(
-        "--cloud",
-        action="store_true",
-        help="Enable cloud storage enumeration (AWS S3, Azure Blob, GCP Bucket).",
-    )
-    parser.add_argument(
-        "--metadata",
-        action="store_true",
-        help="Enable metadata analysis of public documents (PDF, DOCX).",
-    )
-    parser.add_argument(
-        "--forensics",
-        action="store_true",
-        help="Enable image forensics (EXIF data extraction).",
-    )
-    parser.add_argument(
-        "--social",
-        action="store_true",
-        help="Enable social engineering reconnaissance (Dorks, Email Patterns).",
-    )
-    parser.add_argument(
-        "--reverse",
-        action="store_true",
-        help="Enable reverse image search (Generates links for Google, Bing, etc.).",
-    )
-    parser.add_argument(
         "--version", action="version", version=f"Modular ReconX v{VERSION}"
     )
     setup_logging()
     args = parser.parse_args()
-    
+
     # Validate input domain
-    target = args.target.strip()
-    
-    # If it's a file, we skip domain validation
-    if not os.path.isfile(target):
-        if not validate_domain(target):
-            print(f"[!] Invalid domain format or file not found: {target}")
-            sys.exit(1)
-    
+    target_domain = args.domain.strip()
+    if not validate_domain(target_domain):
+        print(f"[!] Invalid domain format: {target_domain}")
+        sys.exit(1)
+
     banner = figlet_format("Modular ReconX", font="slant")
     print(colored(banner, "cyan"))
     print(
         colored(
-            f"Advanced OSINT Tool v{VERSION} | Made with 💖 by Chrisnov & Nai Momang | Cybersecurity Researchers\n",
+            f"Advanced OSINT Tool v{VERSION} | Made with 💖 by Chrisnov & Nai Momang 💻🕵️‍\n",
             "magenta",
         )
     )
-    
+
     scan(
-        target,
+        target_domain,
         output_format=args.output,
         skip_ports=args.skip_ports,
         skip_bruteforce=args.skip_bruteforce,
         correlate_domains=args.correlate,
-        bug_hunt_mode=args.bug_hunt,
-        cloud_enum=args.cloud,
-        metadata_analysis=args.metadata,
-        image_forensics=args.forensics,
-        social_eng=args.social,
-        reverse_image=args.reverse,
     )
 
 

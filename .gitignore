@@ -29,3 +29,4 @@ output/*
 
 # Tooling
 bfg.jar
+.qoder/

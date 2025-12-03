@@ -94,6 +94,13 @@ def enumerate_subdomains(
     Returns:
         A dictionary containing a list of found subdomains, each with its IP(s) and CNAME.
     """
+    if record_types is None:
+        record_types = ["A", "AAAA", "CNAME"]
+    
+    # Use enhanced wordlist if requested
+    if use_enhanced_wordlist:
+        wordlist_path = get_resource_path("data/subdomains_enhanced.txt")
+    
     found_subdomains: List[Dict[str, Any]] = []
 
     try:

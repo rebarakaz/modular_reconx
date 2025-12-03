@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  reconx:
+    build: .
+    image: modular-reconx
+    volumes:
+      - ./output:/app/output
+      - ./.env:/app/.env
+    # Keep the container running or allow interactive use
+    # For a CLI tool, usually we run it with 'run' command, but this allows 'up' to keep it ready if needed,
+    # or just defines the service for 'run'.
+    # We map the output directory to persist reports.
