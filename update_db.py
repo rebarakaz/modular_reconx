@@ -2,20 +2,21 @@
 import sqlite3
 import json
 import os
-import glob  # To search for all .json files in a folder
-from tqdm import tqdm  # For a nice progress bar
+import glob
+import argparse
+from tqdm import tqdm
 
 DB_PATH = "app/data/vulnerabilities.db"
 NVD_DATA_DIR = "nvd_data"
 
 
 def setup_database():
-    """Create the database and table if they don't exist."""
+    """Create the database and tables if they don't exist."""
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    # Create a table to store vulnerability data
-    # Using "cve_id, product, version" as a composite primary key
-    # to avoid duplication of identical data
+    
+    # Create vulnerabilities table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS vulnerabilities (
             cve_id TEXT NOT NULL,
@@ -28,9 +29,18 @@ def setup_database():
             PRIMARY KEY (cve_id, product, version)
         )
     """)
+    
+    # Create metadata table to track processed files
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS processed_files (
+            filename TEXT PRIMARY KEY,
+            mtime REAL
+        )
+    """)
+    
     conn.commit()
     conn.close()
-    print(f"Database '{DB_PATH}' is ready to use.")
+    print(f"Database '{DB_PATH}' is ready.")
 
 
 def parse_cpe_string(cpe_uri):
@@ -49,13 +59,13 @@ def parse_cpe_string(cpe_uri):
 
 def process_nvd_file(filepath, cursor):
     """Process one NVD JSON file and insert its data into the database."""
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"Error reading {filepath}: {e}")
+        return 0
 
-    # We'll fill in the logic to loop and insert data here
-    # pass # Remove 'pass' in the next step
-
-    # --- THIS IS THE LOGIC WE'LL BUILD IN THE NEXT STEP ---
     vulnerabilities_to_insert = []
 
     for entry in data.get("vulnerabilities", []):
@@ -104,18 +114,25 @@ def process_nvd_file(filepath, cursor):
                                 )
 
     if vulnerabilities_to_insert:
+        # Use INSERT OR REPLACE to update existing records
         cursor.executemany(
             """
-            INSERT OR IGNORE INTO vulnerabilities 
+            INSERT OR REPLACE INTO vulnerabilities 
             (cve_id, product, vendor, version, description, cvss_score, link)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         """,
             vulnerabilities_to_insert,
         )
+    
+    return len(vulnerabilities_to_insert)
 
 
 def main():
     """Main function to run the import process."""
+    parser = argparse.ArgumentParser(description="Update vulnerability database from NVD JSON files.")
+    parser.add_argument("--force", "-f", action="store_true", help="Force re-processing of all files.")
+    args = parser.parse_args()
+
     setup_database()
 
     conn = sqlite3.connect(DB_PATH)
@@ -123,16 +140,49 @@ def main():
 
     # Find all .json files in the nvd_data directory
     json_files = glob.glob(os.path.join(NVD_DATA_DIR, "*.json"))
+    
+    if not json_files:
+        print(f"No JSON files found in {NVD_DATA_DIR}. Please run download_data.py first.")
+        return
 
-    print(f"Found {len(json_files)} NVD JSON files to process.")
+    print(f"Found {len(json_files)} NVD JSON files.")
+    
+    files_to_process = []
+    
+    # Check which files need processing
+    for filepath in json_files:
+        filename = os.path.basename(filepath)
+        mtime = os.path.getmtime(filepath)
+        
+        if args.force:
+            files_to_process.append((filepath, filename, mtime))
+            continue
+            
+        cursor.execute("SELECT mtime FROM processed_files WHERE filename = ?", (filename,))
+        result = cursor.fetchone()
+        
+        if result is None or result[0] != mtime:
+            files_to_process.append((filepath, filename, mtime))
+    
+    if not files_to_process:
+        print("All files are up to date. Nothing to process.")
+        conn.close()
+        return
+
+    print(f"Processing {len(files_to_process)} files...")
 
     # Use tqdm for a beautiful progress bar
-    for filepath in tqdm(json_files, desc="Processing NVD files"):
-        process_nvd_file(filepath, cursor)
+    for filepath, filename, mtime in tqdm(files_to_process, desc="Updating database"):
+        count = process_nvd_file(filepath, cursor)
+        
+        # Update processed_files table
+        cursor.execute(
+            "INSERT OR REPLACE INTO processed_files (filename, mtime) VALUES (?, ?)",
+            (filename, mtime)
+        )
+        conn.commit() # Commit after each file to save progress
 
-    conn.commit()
     conn.close()
-
     print("\n✅ Vulnerability data import completed!")
 
 
