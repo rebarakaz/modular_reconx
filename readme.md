@@ -353,6 +353,14 @@ reconx report.pdf
 | `--social` | Generate Google Dorks and analyze email patterns | `reconx example.com --social` |
 | `--reverse` | Generate reverse image search links | `reconx example.com --forensics --reverse` |
 
+### New v1.3.0 Flags
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `--ai` | Enable AI Analysis (Gemini) | `reconx example.com --ai` |
+| `--github` | Enable GitHub Secret Scanning | `reconx example.com --github` |
+| `--waf` | Enable WAF Detection | `reconx example.com --waf` |
+
 ### Combined Usage Examples
 
 ```bash
