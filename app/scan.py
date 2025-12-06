@@ -49,13 +49,16 @@ from .modules.metadata_analysis import analyze_metadata, analyze_local_file
 from .modules.image_forensics import analyze_image, find_images
 from .modules.social_eng import perform_social_recon
 from .modules.reverse_image import generate_reverse_links, print_reverse_links
+from .modules.ai_analysis import analyze_report_with_ai
+from .modules.github_scanner import scan_github
+from .modules.waf_detector import detect_waf
 import os
 
 # Load environment variables
 load_dotenv()
 
 # Version information
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 
 
 def setup_logging() -> None:
@@ -166,6 +169,9 @@ def scan(
     social_eng: bool = False,
     reverse_image: bool = False,
     enhanced_subdomains: bool = False,
+    ai_analyze: bool = False,
+    github_scan: bool = False,
+    waf_detection: bool = False,
 ) -> None:
     """
     Orchestrates the scanning process.
@@ -183,6 +189,9 @@ def scan(
         social_eng: If True, enables social engineering recon.
         reverse_image: If True, enables reverse image search.
         enhanced_subdomains: If True, uses a larger wordlist for subdomains.
+        ai_analyze: If True, uses AI to analyze the final report.
+        github_scan: If True, scans GitHub for secrets.
+        waf_detection: If True, detects Web Application Firewalls.
     """
     # Check if input is a local file
     if os.path.isfile(target):
@@ -479,8 +488,33 @@ def scan(
         results["social_engineering"] = perform_social_recon(domain, found_emails)
         print("[+] Completed: social engineering recon")
 
+    # --- NEW FEATURE: WAF Detection ---
+    if waf_detection:
+        print("\n[*] Detecting Web Application Firewall (WAF)...")
+        results["waf_detection"] = detect_waf(domain)
+        print(f"[+] Completed: WAF detection (Found: {results['waf_detection'].get('firewall', 'None')})")
+
+    # --- NEW FEATURE: GitHub Scanning ---
+    if github_scan:
+        print("\n[*] Scanning GitHub for secrets and dorks...")
+        results["github_scan"] = scan_github(domain)
+        print("[+] Completed: GitHub scan")
+
+    # --- NEW FEATURE: AI Analysis (Must be last) ---
+    if ai_analyze:
+        print("\n[*] Performing AI Analysis of the report (Gemini)...")
+        ai_results = analyze_report_with_ai(results)
+        results["ai_analysis"] = ai_results
+        if "analysis" in ai_results:
+            print("[+] AI Analysis completed successfully.")
+            print("\n--- AI EXECUTIVE SUMMARY ---\n")
+            print(colored(ai_results["analysis"], "yellow"))
+            print("\n----------------------------\n")
+        else:
+            print(f"[!] AI Analysis failed or skipped: {ai_results.get('error') or ai_results.get('note')}")
+
     filename = save_report(results, output_format)
-    print(f"\n✅ Results saved to: {filename}\n")
+    print(f"\n[+] Results saved to: {filename}\n")
 
 
 def main():
@@ -544,6 +578,21 @@ def main():
         help="Use a larger wordlist for subdomain enumeration (slower but more comprehensive).",
     )
     parser.add_argument(
+        "--ai",
+        action="store_true",
+        help="Enable AI analysis of the report using Google Gemini (requires GEMINI_API_KEY).",
+    )
+    parser.add_argument(
+        "--github",
+        action="store_true",
+        help="Enable GitHub secret scanning (uses GITHUB_TOKEN if available, else dorks).",
+    )
+    parser.add_argument(
+        "--waf",
+        action="store_true",
+        help="Enable Web Application Firewall (WAF) detection.",
+    )
+    parser.add_argument(
         "--version", action="version", version=f"Modular ReconX v{VERSION}"
     )
     setup_logging()
@@ -580,6 +629,9 @@ def main():
         social_eng=args.social,
         reverse_image=args.reverse,
         enhanced_subdomains=args.enhanced_subdomains,
+        ai_analyze=args.ai,
+        github_scan=args.github,
+        waf_detection=args.waf,
     )
 
 
