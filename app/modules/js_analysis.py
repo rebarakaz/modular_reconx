@@ -61,6 +61,39 @@ def extract_js_urls(content: str, base_url: str) -> List[str]:
     
     return js_urls
 
+def find_api_endpoints(js_content: str) -> List[str]:
+    """
+    Find potential API endpoints in JavaScript content.
+    """
+    endpoints = []
+    
+    # improved patterns for API endpoint discovery
+    patterns = [
+        r"['\"](/api/v\d+/[a-zA-Z0-9_\-/]+)['\"]",  # /api/v1/users
+        r"['\"](/api/[a-zA-Z0-9_\-/]+)['\"]",       # /api/users
+        r"['\"](https?://api\.[a-zA-Z0-9_\-]+\.[a-z]+/[a-zA-Z0-9_\-/]+)['\"]", # https://api.example.com/v1
+        r"['\"](/graphql)['\"]",                    # /graphql
+        r"\.get\(['\"]([^'\"]+)['\"]",              # axios.get('/users')
+        r"\.post\(['\"]([^'\"]+)['\"]",             # .post('/login')
+        r"\.put\(['\"]([^'\"]+)['\"]",
+        r"\.delete\(['\"]([^'\"]+)['\"]",
+        r"fetch\(['\"]([^'\"]+)['\"]",              # fetch('/api/data')
+    ]
+    
+    for pattern in patterns:
+        matches = re.findall(pattern, js_content, re.IGNORECASE)
+        endpoints.extend(matches)
+    
+    # Filter out common false positives
+    filtered = []
+    for ep in set(endpoints):
+        if len(ep) < 4 or len(ep) > 100: continue
+        if ep.startswith(("//", "#", "javascript:")): continue
+        if ep in ["/"]: continue
+        filtered.append(ep)
+            
+    return sorted(filtered)
+
 def analyze_js_content(js_content: str, url: str) -> Dict[str, Any]:
     """
     Analyze JavaScript content for security issues.
@@ -78,7 +111,8 @@ def analyze_js_content(js_content: str, url: str) -> Dict[str, Any]:
         "security_issues": [],
         "vulnerable_patterns": [],
         "size": len(js_content),
-        "lines_of_code": len(js_content.split('\n'))
+        "lines_of_code": len(js_content.split('\n')),
+        "endpoints": find_api_endpoints(js_content)
     }
     
     # Check for sensitive patterns
@@ -124,7 +158,12 @@ def analyze_javascript_files(base_url: str) -> Dict[str, Any]:
         "js_files": [],
         "total_files": 0,
         "files_with_issues": 0,
-        "sensitive_data_found": False
+        "files_with_issues": 0,
+        "sensitive_data_found": False,
+        "api_endpoints": {
+            "discovered": [],
+            "count": 0
+        }
     }
     
     try:
@@ -160,6 +199,10 @@ def analyze_javascript_files(base_url: str) -> Dict[str, Any]:
                 if js_analysis["sensitive_data"]:
                     results["sensitive_data_found"] = True
                     
+                # Aggregate endpoints
+                if js_analysis.get("endpoints"):
+                    results["api_endpoints"]["discovered"].extend(js_analysis["endpoints"])
+                    
             except Exception as e:
                 logger.error(f"Error analyzing JavaScript file {js_url}: {e}")
                 results["js_files"].append({
@@ -167,7 +210,12 @@ def analyze_javascript_files(base_url: str) -> Dict[str, Any]:
                     "error": str(e)
                 })
         
+        # Deduplicate endpoints
+        results["api_endpoints"]["discovered"] = sorted(list(set(results["api_endpoints"]["discovered"])))
+        results["api_endpoints"]["count"] = len(results["api_endpoints"]["discovered"])
+        
         print(f"  [+] JavaScript analysis completed ({results['files_with_issues']} files with issues)")
+        print(f"  [+] Discovered {results['api_endpoints']['count']} potential API endpoints")
         
     except Exception as e:
         logger.error(f"Error analyzing JavaScript files for {base_url}: {e}")
@@ -175,67 +223,14 @@ def analyze_javascript_files(base_url: str) -> Dict[str, Any]:
     
     return results
 
-def find_api_endpoints(js_content: str) -> List[str]:
-    """
-    Find potential API endpoints in JavaScript content.
-    
-    Args:
-        js_content: JavaScript content to analyze
-        
-    Returns:
-        List of potential API endpoints
-    """
-    endpoints = []
-    
-    # Pattern to match API endpoint URLs
-    endpoint_pattern = r"[\'\"](\/api\/[^\s\'\"<>]+)[\'\"]"
-    matches = re.findall(endpoint_pattern, js_content)
-    endpoints.extend(matches)
-    
-    # Pattern to match REST API endpoints
-    rest_pattern = r"[\'\"](\/[a-zA-Z0-9_\-]+\/[a-zA-Z0-9_\-]+)[\'\"]"
-    matches = re.findall(rest_pattern, js_content)
-    endpoints.extend(matches)
-    
-    # Remove duplicates
-    endpoints = list(set(endpoints))
-    
-    return endpoints
-
 def comprehensive_js_analysis(base_url: str) -> Dict[str, Any]:
     """
     Perform comprehensive JavaScript analysis.
-    
-    Args:
-        base_url: The base URL to analyze
-        
-    Returns:
-        Dictionary containing comprehensive JavaScript analysis results
     """
     print("[*] Performing comprehensive JavaScript analysis...")
     
-    # First run the main analysis
+    # The main analysis now includes endpoint discovery
     js_results = analyze_javascript_files(base_url)
-    
-    # Extract API endpoints from all JavaScript files
-    all_endpoints = []
-    for js_file in js_results.get("js_files", []):
-        if "error" not in js_file and "sensitive_data" in js_file:
-            # Get content of this file (would need to fetch again in real implementation)
-            # For now, we'll just note that endpoint discovery would happen here
-            pass
-    
-    # Add endpoint discovery results
-    js_results["api_endpoints"] = {
-        "note": "API endpoint discovery would be implemented here",
-        "potential_endpoints": [
-            "/api/users",
-            "/api/login",
-            "/api/data",
-            "/rest/v1/*",
-            "/v2/api/*"
-        ]
-    }
     
     print("  [+] Comprehensive JavaScript analysis completed")
     
