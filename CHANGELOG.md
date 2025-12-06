@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2025-12-06
+
+### 🚀 New Features
+
+- **AI Analysis**: Added `--ai` flag to analyze scan reports using Google Gemini API for executive summaries and risk assessment.
+- **GitHub Secret Scanning**: Added `--github` flag to generate dorks and scan for exposed secrets using the GitHub API.
+- **WAF Detection**: Added `--waf` flag to detect Web Application Firewalls (Cloudflare, AWS, Akamai, etc.).
+- **Enhanced Subdomain Enumeration**: Added `--enhanced-subdomains` flag to use a larger wordlist for deeper discovery.
+- **Real API Endpoint Discovery**: Upgraded JS analysis to use regex for finding `/api/v1/`, `axios.get()`, and other endpoint patterns.
+
+### 🛠️ Improvements
+
+- **Windows Compatibility**: Fixed Unicode/Emoji issues in CLI output for Windows CMD/PowerShell.
+- **Requirements Cleanup**: Drastically reduced `requirements.txt` from ~370 to 18 essential packages.
+- **Performance**: Optimized JS analysis to perform endpoint discovery during the initial pass.
+
+### 🐛 Fixes
+
+- Fixed `UnboundLocalError` in subdomain enumeration module.
+- Fixed `SyntaxError` in `scan.py` argument parsing.
+
 ## [1.2.0] - 2025-12-03
 
 ### 🚀 New Features
