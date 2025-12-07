@@ -25,7 +25,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.2.0] - 2025-12-03
 
-### 🚀 New Features
+### 🚀 What's New
 
 - **Docker Support**: Added `Dockerfile` and `docker-compose.yml` for easy containerized deployment.
 - **Cloud Enumeration**: Added `--cloud` flag to check for public AWS S3 buckets, Azure Blobs, and GCP Buckets.
@@ -35,13 +35,13 @@ All notable changes to this project will be documented in this file.
 - **Reverse Image Search**: Added `--reverse` flag to generate direct search links for Google Lens, Bing, Yandex, and TinEye.
 - **Local File Support**: The tool now accepts local file paths (e.g., `image.jpg`, `report.pdf`) for direct analysis without a domain scan.
 
-### 🛠️ Improvements
+### Improvements
 
 - **Unified CLI**: `scan.py` now intelligently handles both domain names and local file paths.
 - **Dependency Updates**: Added `PyPDF2`, `python-docx`, and `Pillow` to `requirements.txt`.
 - **Refactoring**: Modularized new features into dedicated files in `app/modules/`.
 
-### 🐛 Fixes
+### Fixes
 
 - Fixed an issue with duplicate arguments in `scan.py`.
 - Improved error handling for local file analysis.

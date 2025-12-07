@@ -47,6 +47,11 @@ The project follows a modular architecture where each OSINT capability is implem
 - `image_forensics.py` - Image EXIF analysis
 - `social_eng.py` - Social engineering reconnaissance
 - `reverse_image.py` - Reverse image search link generation
+- `ai_analysis.py` - AI-powered report analysis (Gemini)
+- `github_scanner.py` - GitHub secret and dork scanning
+- `waf_detector.py` - Web Application Firewall detection
+- `breach_check.py` - Email breach verification
+- `subdomain_permutation.py` - Subdomain permutation generation
 
 ## Common Development Commands
 
@@ -79,6 +84,18 @@ reconx example.com --rate-limit 1.0
 
 # Enable comprehensive bug hunting mode
 reconx example.com --bug-hunt
+
+# Enable AI analysis (requires GEMINI_API_KEY)
+reconx example.com --ai
+
+# Scan GitHub for secrets
+reconx example.com --github
+
+# Detect Web Application Firewall
+reconx example.com --waf
+
+# Use enhanced subdomain wordlist
+reconx example.com --enhanced-subdomains
 ```
 
 ### Data Management

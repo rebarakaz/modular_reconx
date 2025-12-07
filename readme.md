@@ -1,8 +1,6 @@
 # 🕵️ Modular ReconX v1.2.0
 
-<p align="center">
-  <img src="splash.png" alt="Modular ReconX Splash Screen" width="600">
-</p>
+![Modular ReconX Splash Screen](splash.png)
 
 **Modular ReconX** is a modular OSINT tool based on Python for performing a complete analysis of a domain or website using open-source intelligence techniques.
 
@@ -150,8 +148,9 @@ Some modules require local databases to function. A script is provided to downlo
     ```
 
     This command will download the GeoLite2 database and the latest NVD vulnerability feeds.
-    
+
     **Note:** The script automatically skips existing files to save bandwidth. To force a redownload of all files, use the `--force` flag:
+
     ```bash
     python download_data.py --force
     ```
