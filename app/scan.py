@@ -534,9 +534,9 @@ def main():
     parser.add_argument("target", help="The domain to scan (e.g., example.com) OR local file path")
     parser.add_argument(
         "--output",
-        choices=["json", "txt"],
+        choices=["json", "txt", "csv", "html"],
         default="json",
-        help="The output format for the report (json or txt).",
+        help="The output format for the report (json, txt, csv, or html).",
     )
     parser.add_argument(
         "--skip-ports", action="store_true", help="Skip the port scanning module."

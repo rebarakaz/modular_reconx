@@ -238,13 +238,173 @@ def save_text_report(data: Dict[str, Any]) -> str:
     return filename
 
 
+import csv
+from io import StringIO
+
+def save_csv_output(data: Dict[str, Any]) -> str:
+    """Saves the report data to a set of CSV files (zipped) or a flattened CSV."""
+    domain = data.get("domain", "unknown")
+    filename = _generate_filename(domain, "csv")
+    
+    # Flattening complex JSON to CSV is tricky. 
+    # For a CLI tool, a usable CSV usually focuses on specific lists like subdomains or vulnerabilities.
+    # Here we will create a flattened key-value structure for high-level info
+    # and maybe separate sections for lists if we were doing multi-file.
+    # For simplicity in a single file, we'll use a specific format or just dump flattened keys.
+    
+    # Let's flatten the dictionary
+    flat_data = []
+    
+    def flatten(x, name=''):
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + a + '_')
+        elif type(x) is list:
+            for i, a in enumerate(x):
+                flatten(a, name + str(i) + '_')
+        else:
+            flat_data.append((name[:-1], x))
+
+    flatten(data)
+    
+    os.makedirs("output", exist_ok=True)
+    try:
+        with open(filename, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(["Key", "Value"])
+            for row in flat_data:
+                writer.writerow(row)
+    except Exception as e:
+         raise IOError(f"Failed to save CSV report to {filename}: {e}")
+         
+    return filename
+
+def save_html_output(data: Dict[str, Any]) -> str:
+    """Saves the report data to a beautiful HTML file."""
+    domain = data.get("domain", "unknown")
+    filename = _generate_filename(domain, "html")
+    
+    os.makedirs("output", exist_ok=True)
+    
+    # Basic HTML structure with some styling
+    # In a real app, you might use Jinja2, but here we'll construct a simple string
+    # to avoid adding heavyweight dependencies if not needed.
+    
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ReconX Report - {domain}</title>
+        <style>
+            :root {{
+                --primary: #4f46e5;
+                --secondary: #ec4899;
+                --bg: #f3f4f6;
+                --card-bg: #ffffff;
+                --text: #1f2937;
+            }}
+            body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }}
+            .container {{ max-width: 1200px; margin: 0 auto; }}
+            header {{ text-align: center; margin-bottom: 40px; }}
+            h1 {{ color: var(--primary); margin-bottom: 10px; }}
+            .timestamp {{ color: #6b7280; font-size: 0.9em; }}
+            .card {{ background: var(--card-bg); border-radius: 10px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }}
+            h2 {{ border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; color: var(--text); margin-top: 0; }}
+            
+            .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }}
+            .key-value {{ display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }}
+            .key {{ font-weight: 600; color: #4b5563; }}
+            
+            .tag {{ display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 0.8em; font-weight: 600; background: #e0e7ff; color: #3730a3; margin-right: 5px; }}
+            
+            pre {{ background: #1f2937; color: #f9fafb; padding: 15px; border-radius: 8px; overflow-x: auto; }}
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {{ width: 8px; }}
+            ::-webkit-scrollbar-track {{ background: #f1f1f1; }}
+            ::-webkit-scrollbar-thumb {{ background: #888; border-radius: 4px; }}
+            ::-webkit-scrollbar-thumb:hover {{ background: #555; }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>🕵️ Modular ReconX Report</h1>
+                <div class="timestamp">Target: <strong>{domain}</strong> | {timestamp()}</div>
+            </header>
+            
+            <div class="card">
+                <h2>📊 Executive Summary</h2>
+                <div class="grid">
+                    <div class="key-value"><span class="key">Target</span> <span>{domain}</span></div>
+                    <div class="key-value"><span class="key">IP Address</span> <span>{data.get('ip_address', 'N/A')}</span></div>
+                    <div class="key-value"><span class="key">Scan Time</span> <span>{timestamp()}</span></div>
+                </div>
+            </div>
+    """
+    
+    # Loop through data and create cards for important sections
+    # Excluding raw data keys if necessary
+    exclude_keys = ["domain", "ip_address", "error"]
+    
+    for key, value in data.items():
+        if key in exclude_keys:
+            continue
+            
+        html_content += f'<div class="card"><h2>{key.replace("_", " ").title()}</h2>'
+        
+        if isinstance(value, dict):
+            # Special handling for certain nested dicts like open_ports
+            if key == "open_ports" and "open_ports" in value:
+                 # Flatten the inner ports dict
+                 for p, banner in value["open_ports"].items():
+                     html_content += f'<div class="key-value"><span class="key">Port {p}</span> <span>{banner or "N/A"}</span></div>'
+            else:
+                for k, v in value.items():
+                    if isinstance(v, list):
+                        html_content += f'<div class="key-value"><span class="key">{k}</span> <span>{len(v)} items</span></div>'
+                        # html_content += f'<pre>{json.dumps(v, indent=2)}</pre>' # Optional: detailed list view
+                    else:
+                        html_content += f'<div class="key-value"><span class="key">{k}</span> <span>{str(v)[:100]}</span></div>' # Truncate long strings
+        elif isinstance(value, list):
+            html_content += f'<p>Found {len(value)} items:</p><ul>'
+            for item in value[:10]: # Show first 10 items to prevent HTML bloating
+                if isinstance(item, dict):
+                    display_str = str(item.get("subdomain") or item.get("url") or str(item))
+                else:
+                    display_str = str(item)
+                html_content += f'<li>{display_str}</li>'
+            if len(value) > 10:
+                html_content += f'<li>...and {len(value)-10} more</li>'
+            html_content += '</ul>'
+        else:
+             html_content += f'<p>{str(value)}</p>'
+             
+        html_content += '</div>'
+
+    html_content += """
+        </div>
+    </body>
+    </html>
+    """
+    
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(html_content)
+    except Exception as e:
+        raise IOError(f"Failed to save HTML report to {filename}: {e}")
+        
+    return filename
+
 def save_report(data: Dict[str, Any], output_format: str = "json") -> str:
     """
     Dispatches to the correct save function based on the desired format.
 
     Args:
         data: The report data to save
-        output_format: The output format ("json" or "txt")
+        output_format: The output format ("json", "txt", "csv", "html")
 
     Returns:
         The path to the saved file
@@ -257,5 +417,9 @@ def save_report(data: Dict[str, Any], output_format: str = "json") -> str:
         return save_text_report(data)
     elif output_format == "json":
         return save_json_output(data)
+    elif output_format == "csv":
+        return save_csv_output(data)
+    elif output_format == "html":
+        return save_html_output(data)
     else:
         raise ValueError(f"Unsupported output format: {output_format}")
