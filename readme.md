@@ -166,81 +166,60 @@ Some modules require local databases to function. A script is provided to downlo
 
 ## 🐧 Linux Specific Instructions
 
-### Installation on Linux
+### Installation on Linux (Important)
+Since **PEP 668** was adopted by many Linux distributions (Debian 12, Ubuntu 23.04+, Linux Mint 22+, Kali, Parrot OS, etc.), installing Python packages globally using `pip` is strongly discouraged and often restricted to prevent conflicts with the system package manager (`apt`, `dnf`, `pacman`).
 
-The installation process on Linux is identical to other platforms:
+#### Recommended Method: Virtual Environment
+We **strongly recommend** using a virtual environment for installation. This method isolates project dependencies from your system, preventing conflicts and permission issues.
 
 ```bash
-# Clone the repository
+# 1. Install pip and venv if not present
+sudo apt install python3-pip python3-venv -y
+
+# 2. Clone the repository
 git clone https://github.com/rebarakaz/modular_reconx.git
 cd modular_reconx
 
-# Install as a package
+# 3. Create a virtual environment
+python3 -m venv .venv
+
+# 4. Activate the virtual environment
+source .venv/bin/activate
+
+# 5. Install the tool in editable mode
 pip install -e .
+
+# 6. Run the tool
+reconx example.com
 ```
 
-### Running with Correct Permissions
-
-On Linux systems, you might encounter permission issues with some modules. If you experience problems:
-
-1. Ensure your user has appropriate permissions:
-
-    ```bash
-    # Make sure Python scripts are executable
-    chmod +x *.py
-    ```
-
-2. If you encounter issues with the port scanner, you might need to run with elevated privileges:
-
-    ```bash
-    # For extensive port scanning (optional)
-    sudo reconx example.com
-    ```
-
-### Virtual Environment (Recommended)
-
-For better isolation and to avoid permission issues, it's recommended to use a virtual environment:
-
+To exit the virtual environment when you're done:
 ```bash
-# Create a virtual environment
-python3 -m venv venv
-
-# Activate the virtual environment
-source venv/bin/activate
-
-# Install the package
-pip install -e .
-
-# Run the tool
-reconx example.com
-
-# Deactivate when done
 deactivate
 ```
 
-### Troubleshooting on Linux
+#### Alternative: Pipx
+If you want to install it as a command-line tool usable from anywhere without manually activating a virtual environment, `pipx` is an excellent alternative.
 
-If you encounter issues with data files not being found:
+```bash
+# Install pipx
+sudo apt install pipx
+pipx ensurepath
 
-1. Verify the package is correctly installed:
+# Install modular-reconx via pipx
+pipx install git+https://github.com/rebarakaz/modular_reconx.git
+```
 
-    ```bash
-    pip show modular-reconx
-    ```
+### Running with Correct Permissions
+Some modules (like detailed port scanning) may require root privileges. If you installed via the Virtual Environment method:
 
-2. Check that data files are in the correct location:
+```bash
+# While inside the virtual environment (.venv)
+sudo .venv/bin/reconx example.com
+```
 
-    ```bash
-    # After installation, data files should be accessible
-    python -c "from app.modules.utils import get_resource_path; print(get_resource_path('data/subdomains.txt'))"
-    ```
-
-3. If you still have issues, try reinstalling:
-
-    ```bash
-    pip uninstall modular-reconx
-    pip install -e .
-    ```
+### Troubleshooting
+If you encounter "Externally Managed Environment" errors, it means you are trying to install system-wide without a virtual environment. Please use the **Recommended Method** above.
 
 ## 🚀 How to Run
 
