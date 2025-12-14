@@ -1,0 +1,161 @@
+
+import os
+import requests
+import zipfile
+import tarfile
+import argparse
+from datetime import datetime
+from dotenv import load_dotenv
+from tqdm import tqdm
+
+import lzma
+
+# --- Configuration ---
+NVD_BASE_URL = "https://github.com/fkie-cad/nvd-json-data-feeds/releases/latest/download/CVE-{year}.json.xz"
+NVD_MODIFIED_URL = "https://github.com/fkie-cad/nvd-json-data-feeds/releases/latest/download/CVE-Modified.json.xz"
+NVD_START_YEAR = 1999  # Or any year you want to start from
+NVD_DATA_DIR = "nvd_data"
+
+GEOLITE_BASE_URL = "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={key}&suffix=tar.gz"
+DATA_DIR = "app/data"
+GEOLITE_TAR_FILENAME = "GeoLite2-City.tar.gz"
+GEOLITE_DB_FILENAME = "GeoLite2-City.mmdb"
+
+# --- Helper Functions ---
+
+def download_file(url, dest_path):
+    """Downloads a file from a URL to a destination path with a progress bar."""
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        total_size = int(response.headers.get("content-length", 0))
+        
+        with open(dest_path, "wb") as f, tqdm(
+            desc=os.path.basename(dest_path),
+            total=total_size,
+            unit="iB",
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as bar:
+            for chunk in response.iter_content(chunk_size=8192):
+                size = f.write(chunk)
+                bar.update(size)
+        print(f"Successfully downloaded {os.path.basename(dest_path)}")
+        return True
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading {url}: {e}")
+        return False
+
+# --- Core Functions ---
+
+def download_nvd_feeds(force=False):
+    """Downloads and extracts NVD data feeds."""
+    print("\n--- Downloading NVD Data Feeds ---")
+    os.makedirs(NVD_DATA_DIR, exist_ok=True)
+    current_year = datetime.now().year
+    
+    # Download yearly feeds
+    for year in range(NVD_START_YEAR, current_year + 1):
+        json_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json")
+        
+        # Skip if file exists and it's a past year (unless forced)
+        # We always download the current year as it changes frequently
+        if os.path.exists(json_path) and year < current_year and not force:
+            print(f"Skipping CVE-{year}.json (already exists). Use --force to redownload.")
+            continue
+            
+        url = NVD_BASE_URL.format(year=year)
+        xz_path = os.path.join(NVD_DATA_DIR, f"CVE-{year}.json.xz")
+        
+        if download_file(url, xz_path):
+            try:
+                with lzma.open(xz_path, 'rb') as f_in:
+                    with open(json_path, 'wb') as f_out:
+                        f_out.write(f_in.read())
+                print(f"Successfully extracted {os.path.basename(xz_path)}")
+                os.remove(xz_path) # Clean up the xz file
+            except lzma.LZMAError:
+                print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
+
+    # Download modified feed (always download unless specifically skipped, but here we treat it as essential for updates)
+    # However, if user wants to force, we force. If not, we still download it because it's "Modified".
+    # But wait, if we want to be strictly "update only", Modified IS the update.
+    xz_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json.xz")
+    json_path = os.path.join(NVD_DATA_DIR, "CVE-Modified.json")
+    
+    print("Downloading CVE-Modified.json (latest updates)...")
+    if download_file(NVD_MODIFIED_URL, xz_path):
+        try:
+            with lzma.open(xz_path, 'rb') as f_in:
+                    with open(json_path, 'wb') as f_out:
+                        f_out.write(f_in.read())
+            print(f"Successfully extracted {os.path.basename(xz_path)}")
+            os.remove(xz_path)
+        except lzma.LZMAError:
+            print(f"Error: {os.path.basename(xz_path)} is not a valid .xz file.")
+
+def download_geolite_db(force=False):
+    """Downloads and extracts the GeoLite2 City database."""
+    print("\n--- Downloading GeoLite2 City Database ---")
+    
+    # Check if DB already exists
+    db_path = os.path.join(DATA_DIR, GEOLITE_DB_FILENAME)
+    if os.path.exists(db_path) and not force:
+        print(f"Skipping GeoLite2 database (already exists at {db_path}). Use --force to redownload.")
+        return
+
+    load_dotenv()
+    license_key = os.getenv("MAXMIND_LICENSE_KEY")
+
+    if not license_key or license_key == "YourMaxMindLicenseKeyHere":
+        print("Error: MAXMIND_LICENSE_KEY not found in .env file.")
+        print("Please sign up for a free MaxMind account to get a license key and add it to your .env file.")
+        return
+
+    os.makedirs(DATA_DIR, exist_ok=True)
+    url = GEOLITE_BASE_URL.format(key=license_key)
+    tar_path = os.path.join(DATA_DIR, GEOLITE_TAR_FILENAME)
+
+    if download_file(url, tar_path):
+        try:
+            with tarfile.open(tar_path, "r:gz") as tar:
+                # Find the .mmdb file in the tar archive
+                mmdb_member = None
+                for member in tar.getmembers():
+                    if member.name.endswith(GEOLITE_DB_FILENAME):
+                        mmdb_member = member
+                        break
+                
+                if not mmdb_member:
+                    print(f"Error: Could not find {GEOLITE_DB_FILENAME} in the downloaded archive.")
+                    return
+
+                # Extract the .mmdb file to the data directory
+                mmdb_member.name = os.path.basename(mmdb_member.name) # Remove folder structure
+                tar.extract(mmdb_member, path=DATA_DIR)
+                print(f"Successfully extracted {GEOLITE_DB_FILENAME} to {DATA_DIR}/")
+
+        except tarfile.TarError as e:
+            print(f"Error extracting {tar_path}: {e}")
+        finally:
+            if os.path.exists(tar_path):
+                os.remove(tar_path) # Clean up the tar.gz file
+
+# --- Main Execution ---
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Download data dependencies for Modular ReconX.")
+    parser.add_argument("--nvd", action="store_true", help="Download NVD data feeds only.")
+    parser.add_argument("--geoip", action="store_true", help="Download GeoLite2 database only.")
+    parser.add_argument("--force", "-f", action="store_true", help="Force redownload of existing files.")
+    args = parser.parse_args()
+
+    if args.nvd and not args.geoip:
+        download_nvd_feeds(force=args.force)
+    elif args.geoip and not args.nvd:
+        download_geolite_db(force=args.force)
+    else:
+        # Download both by default or if both flags are provided
+        download_nvd_feeds(force=args.force)
+        download_geolite_db(force=args.force)
+        print("\nData download process complete.")
