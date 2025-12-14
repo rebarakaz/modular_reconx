@@ -87,22 +87,24 @@ Docker provides an isolated environment with all dependencies pre-configured.
 git clone https://github.com/rebarakaz/modular_reconx.git
 cd modular_reconx
 
-# Build the Docker image
-docker build -t modular-reconx .
+# 1. Setup Environment
+cp .env.example .env
+# Edit .env and verify/add your API Keys
 
-# Run a scan
-docker run --rm modular-reconx example.com
+# 2. Download Data Dependencies (Using Docker)
+# This populates the local nvd_data/ and app/data/ folders which are mounted into the container
+docker-compose run --rm reconx python download_data.py
 
-# Or use Docker Compose
+# 3. Build & Run
+docker-compose build
 docker-compose run --rm reconx example.com
 ```
 
 **Docker Benefits:**
 
-- No dependency conflicts
-- Consistent environment across platforms
-- Easy deployment and scaling
-- Isolated from host system
+- **Clean & Fast Builds**: Uses `.dockerignore` to keep images small (~100MB layer).
+- **Persistent Data**: NVD database and GeoIP files are stored on your host machine (in `nvd_data/` and `app/data/`) and mounted to the container. You only need to download them once.
+- **Isolation**: strict separation from host system packages.
 
 ### 3. Configuration (API Keys)
 
