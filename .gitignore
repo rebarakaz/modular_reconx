@@ -30,3 +30,4 @@ output/*
 # Tooling
 bfg.jar
 .qoder/
+AGENTS.md
