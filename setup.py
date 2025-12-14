@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="modular-reconx",
-    version="1.2.0",
+    version="1.3.0",
     author="Reynov Christian",
     author_email="contact@chrisnov.com",
     description="A modular OSINT tool for performing complete analysis of domains or websites using open-source intelligence techniques",
