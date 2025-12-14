@@ -8,6 +8,15 @@ from typing import Any, Dict, List, Optional
 from dotenv import load_dotenv
 from pyfiglet import figlet_format
 from termcolor import colored
+import os
+
+# Fix for relative imports when running as a script
+if __name__ == "__main__" and __package__ is None:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(os.path.dirname(current_dir))
+    sys.path.append(os.path.dirname(current_dir))
+    sys.path.append(current_dir)
+    __package__ = "app"
 
 # Local application imports
 from .modules.breach_check import check_email_breach
