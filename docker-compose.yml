@@ -7,6 +7,10 @@ services:
     volumes:
       - ./output:/app/output
       - ./.env:/app/.env
+      # Mount data directories to persist downloaded databases (NVD, GeoIP, etc.)
+      # and keep the image size small.
+      - ./nvd_data:/app/nvd_data
+      - ./app/data:/app/app/data
     # Keep the container running or allow interactive use
     # For a CLI tool, usually we run it with 'run' command, but this allows 'up' to keep it ready if needed,
     # or just defines the service for 'run'.

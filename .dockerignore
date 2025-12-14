@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Project specific
+output/
+osint_tool.log
+cache/
+
+# Data files (will be mounted via volume for efficiency)
+nvd_data/
+app/data/GeoLite2-City.mmdb
+app/data/vulnerabilities.db
+
+# Documentation
+AGENTS.md
+EXAMPLES.md
+TESTING.md
+CHANGELOG.md
+
+# Tests & Scripts (optional, but keeps image smaller if not needed for runtime)
+tests/
+scripts/
